@@ -4,7 +4,7 @@
 
 **Patrick -> HTML-Man**
 
-- Verantwortlich dass HTML zu 100% "verhebed".
+- Verantwortlich dass HTML zu 100% "verhebed"
 - Verantwortlich dass Suche HTML-mässig funktionert
 
 
