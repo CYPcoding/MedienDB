@@ -7,8 +7,8 @@
 		</ul>
 	</div>
 
-	<div class="uk-width-1-2@m" align="right">
-		<a class="uk-label">Logo</a>
+	<div id="filters" class="uk-width-1-2@m" align="right">
+		<a class="uk-label" data-filter="e">Logo</a>
 		<a class="uk-label">Corporate</a>
 		<a class="uk-label">BFE</a>
 		<a class="uk-label">Icon</a>
@@ -19,47 +19,421 @@
 </div>
 
 <div uk-grid>
-    <div class="uk-child-width-1-5@m" uk-grid>
-        <div class="item">
-            <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
-                <div class="uk-inline">
-                    <img src="assets/img/kermit.jpg" alt="">
+    <div class="mediagrid uk-child-width-1-5@m" uk-grid>
+        <a href="#media001" uk-toggle>
+            <div class="item">
+                <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
+                    <div class="uk-inline">
+                        <img src="assets/img/kermit.jpg" alt="">
+                    </div>
+                    <div class="uk-overlay uk-position-bottom">
+                        <span class="uk-label">BFE</span>
+                    </div>
                 </div>
-                <div class="uk-overlay uk-position-bottom">
-                    <span class="uk-label">BFE</span>
+            </div>
+        </a>
+        <div id="media001" class="uk-modal-container" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <button class="uk-modal-close-outside" type="button" uk-close></button>
+                <div class="uk-modal-body" uk-grid>
+                    <div class="uk-width-2-3@m">
+                        <img src="assets/img/kermit.jpg" alt="" />
+                    </div>
+                    <div class="uk-width-1-3@m">
+                        <ul class="uk-list uk-list-large uk-list-divider">
+                            <li>Grösse: 1920 x 720 px</li>
+                            <li>Tags: <span class="uk-label">BFE</span></li>
+                        </ul>
+                        
+                            <br><br><br><br><br>Lizenz:
+                            <ul class="uk-list uk-list-large uk-list-divider">
+                                <li>Bigstockphoto 185421579 - online</li>
+                                <li>Bigstockphoto 142157681 - print</li>
+                            </ul>
+                        
+                    </div>
+                </div>
+                <div class="uk-modal-footer">
+                    <h4>Dieses Bild neu verwenden:</h4>
+                    <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                        <thead>
+                            <tr>
+                                <th>Art</th>
+                                <th>Zweck</th>
+                                <th>Benutzer</th>
+                                <th>Datum</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <select class="uk-select">
+                                        <option>Online</option>
+                                        <option>Print</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" placeholder="Zweck">
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" placeholder="Sabrina Thoma" disabled>
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" placeholder="02.12.17" disabled>
+                                </td>
+                                <td>
+                                    <button class="uk-button uk-button-primary">Download</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4>Verwendung:</h4>
+                    <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                        <thead>
+                            <tr>
+                                <th>Art</th>
+                                <th>Zweck</th>
+                                <th>Benutzer</th>
+                                <th>Datum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Print</td>
+                                <td>Inserat Cash</td>
+                                <td>Simone Jeker</td>
+                                <td>18.12.16</td>
+                            </tr>
+                            <tr>
+                                <td>Print</td>
+                                <td>Inserat 20Min</td>
+                                <td>Simone Jeker</td>
+                                <td>02.12.16</td>
+                            </tr>
+                            <tr>
+                                <td>Online</td>
+                                <td>Inserat 20Min</td>
+                                <td>Vlado Repic</td>
+                                <td>03.02.16</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <div class="item">
-            <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
-                <div class="uk-inline">
-                    <img src="https://images.unsplash.com/photo-1497829352618-8528e15d7ce7?auto=format&fit=crop&w=1351&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
+        
+        <a href="#media002" uk-toggle>
+            <div class="item">
+                <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
+                    <div class="uk-inline">
+                        <img src="https://images.unsplash.com/photo-1497829352618-8528e15d7ce7?auto=format&fit=crop&w=1351&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
+                    </div>
+                    <div class="uk-overlay uk-position-bottom">
+                        <span class="uk-label">BFE</span>
+                    </div>
                 </div>
-                <div class="uk-overlay uk-position-bottom">
-                    <span class="uk-label">BFE</span>
+            </div>
+        </a>
+        <div id="media002" class="uk-modal-container" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <button class="uk-modal-close-outside" type="button" uk-close></button>
+                <div class="uk-modal-body" uk-grid>
+                    <div class="uk-width-2-3@m">
+                        <img src="https://images.unsplash.com/photo-1497829352618-8528e15d7ce7?auto=format&fit=crop&w=1351&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="" />
+                    </div>
+                    <div class="uk-width-1-3@m">
+                        <ul class="uk-list uk-list-large uk-list-divider">
+                            <li>Grösse: 1920 x 720 px</li>
+                            <li>Tags: <span class="uk-label">BFE</span></li>
+                        </ul>
+                        
+                            <br><br><br><br><br>Lizenz:
+                            <ul class="uk-list uk-list-large uk-list-divider">
+                                <li>Bigstockphoto 185421579 - online</li>
+                                <li>Bigstockphoto 142157681 - print</li>
+                            </ul>
+                        
+                    </div>
+                </div>
+                <div class="uk-modal-footer">
+                    <h4>Dieses Bild neu verwenden:</h4>
+                    <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                        <thead>
+                            <tr>
+                                <th>Art</th>
+                                <th>Zweck</th>
+                                <th>Benutzer</th>
+                                <th>Datum</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <select class="uk-select">
+                                        <option>Online</option>
+                                        <option>Print</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" placeholder="Zweck">
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" placeholder="Sabrina Thoma" disabled>
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" placeholder="02.12.17" disabled>
+                                </td>
+                                <td>
+                                    <button class="uk-button uk-button-primary">Download</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4>Verwendung:</h4>
+                    <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                        <thead>
+                            <tr>
+                                <th>Art</th>
+                                <th>Zweck</th>
+                                <th>Benutzer</th>
+                                <th>Datum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Print</td>
+                                <td>Inserat Cash</td>
+                                <td>Simone Jeker</td>
+                                <td>18.12.16</td>
+                            </tr>
+                            <tr>
+                                <td>Print</td>
+                                <td>Inserat 20Min</td>
+                                <td>Simone Jeker</td>
+                                <td>02.12.16</td>
+                            </tr>
+                            <tr>
+                                <td>Online</td>
+                                <td>Inserat 20Min</td>
+                                <td>Vlado Repic</td>
+                                <td>03.02.16</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <div class="item">
-            <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
-                <div class="uk-inline">
-                    <img src="https://images.unsplash.com/photo-1416163119970-b823693d67e7?auto=format&fit=crop&w=1382&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
+
+        <a href="#media003" uk-toggle>
+            <div class="item">
+                <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
+                    <div class="uk-inline">
+                        <img src="https://images.unsplash.com/photo-1416163119970-b823693d67e7?auto=format&fit=crop&w=1382&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
+                    </div>
+                    <div class="uk-overlay uk-position-bottom">
+                        <span class="uk-label">BFE</span>
+                    </div>
                 </div>
-                <div class="uk-overlay uk-position-bottom">
-                    <span class="uk-label">BFE</span>
+            </div>
+        </a>
+        <div id="media003" class="uk-modal-container" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <button class="uk-modal-close-outside" type="button" uk-close></button>
+                <div class="uk-modal-body" uk-grid>
+                    <div class="uk-width-2-3@m">
+                        <img src="https://images.unsplash.com/photo-1416163119970-b823693d67e7?auto=format&fit=crop&w=1382&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="" />
+                    </div>
+                    <div class="uk-width-1-3@m">
+                        <ul class="uk-list uk-list-large uk-list-divider">
+                            <li>Grösse: 1920 x 720 px</li>
+                            <li>Tags: <span class="uk-label">BFE</span></li>
+                        </ul>
+                        
+                            <br><br><br><br><br>Lizenz:
+                            <ul class="uk-list uk-list-large uk-list-divider">
+                                <li>Bigstockphoto 185421579 - online</li>
+                                <li>Bigstockphoto 142157681 - print</li>
+                            </ul>
+                        
+                    </div>
+                </div>
+                <div class="uk-modal-footer">
+                    <h4>Dieses Bild neu verwenden:</h4>
+                    <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                        <thead>
+                            <tr>
+                                <th>Art</th>
+                                <th>Zweck</th>
+                                <th>Benutzer</th>
+                                <th>Datum</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <select class="uk-select">
+                                        <option>Online</option>
+                                        <option>Print</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" placeholder="Zweck">
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" placeholder="Sabrina Thoma" disabled>
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" placeholder="02.12.17" disabled>
+                                </td>
+                                <td>
+                                    <button class="uk-button uk-button-primary">Download</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4>Verwendung:</h4>
+                    <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                        <thead>
+                            <tr>
+                                <th>Art</th>
+                                <th>Zweck</th>
+                                <th>Benutzer</th>
+                                <th>Datum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Print</td>
+                                <td>Inserat Cash</td>
+                                <td>Simone Jeker</td>
+                                <td>18.12.16</td>
+                            </tr>
+                            <tr>
+                                <td>Print</td>
+                                <td>Inserat 20Min</td>
+                                <td>Simone Jeker</td>
+                                <td>02.12.16</td>
+                            </tr>
+                            <tr>
+                                <td>Online</td>
+                                <td>Inserat 20Min</td>
+                                <td>Vlado Repic</td>
+                                <td>03.02.16</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-        <div class="item">
-            <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
-                <div class="uk-inline">
-                    <img src="https://images.unsplash.com/photo-1511184059754-e4b5bbbcef75?auto=format&fit=crop&w=800&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
+
+        <a href="#media004" uk-toggle>
+            <div class="item">
+                <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
+                    <div class="uk-inline">
+                        <img src="https://images.unsplash.com/photo-1511184059754-e4b5bbbcef75?auto=format&fit=crop&w=800&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
+                    </div>
+                    <div class="uk-overlay uk-position-bottom">
+                        <span class="uk-label">BFE</span>
+                    </div>
                 </div>
-                <div class="uk-overlay uk-position-bottom">
-                    <span class="uk-label">BFE</span>
+            </div>
+        </a>
+        <div id="media004" class="uk-modal-container" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <button class="uk-modal-close-outside" type="button" uk-close></button>
+                <div class="uk-modal-body" uk-grid>
+                    <div class="uk-width-2-3@m">
+                        <img src="https://images.unsplash.com/photo-1511184059754-e4b5bbbcef75?auto=format&fit=crop&w=800&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="" />
+                    </div>
+                    <div class="uk-width-1-3@m">
+                        <ul class="uk-list uk-list-large uk-list-divider">
+                            <li>Grösse: 1920 x 720 px</li>
+                            <li>Tags: <span class="uk-label">BFE</span></li>
+                        </ul>
+                        
+                            <br><br><br><br><br>Lizenz:
+                            <ul class="uk-list uk-list-large uk-list-divider">
+                                <li>Bigstockphoto 185421579 - online</li>
+                                <li>Bigstockphoto 142157681 - print</li>
+                            </ul>
+                        
+                    </div>
+                </div>
+                <div class="uk-modal-footer">
+                    <h4>Dieses Bild neu verwenden:</h4>
+                    <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                        <thead>
+                            <tr>
+                                <th>Art</th>
+                                <th>Zweck</th>
+                                <th>Benutzer</th>
+                                <th>Datum</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <select class="uk-select">
+                                        <option>Online</option>
+                                        <option>Print</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" placeholder="Zweck">
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" placeholder="Sabrina Thoma" disabled>
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" placeholder="02.12.17" disabled>
+                                </td>
+                                <td>
+                                    <button class="uk-button uk-button-primary">Download</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4>Verwendung:</h4>
+                    <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                        <thead>
+                            <tr>
+                                <th>Art</th>
+                                <th>Zweck</th>
+                                <th>Benutzer</th>
+                                <th>Datum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Print</td>
+                                <td>Inserat Cash</td>
+                                <td>Simone Jeker</td>
+                                <td>18.12.16</td>
+                            </tr>
+                            <tr>
+                                <td>Print</td>
+                                <td>Inserat 20Min</td>
+                                <td>Simone Jeker</td>
+                                <td>02.12.16</td>
+                            </tr>
+                            <tr>
+                                <td>Online</td>
+                                <td>Inserat 20Min</td>
+                                <td>Vlado Repic</td>
+                                <td>03.02.16</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+
+        <!-- DEMO Modal bis hier -->
+
         <div class="item">
             <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
                 <div class="uk-inline">
@@ -223,3 +597,21 @@
         </div>
     </div>
 </div>
+
+
+<script>
+$('.mediagrid').isotope({
+  // options
+  itemSelector: '.item',
+  layoutMode: 'fitRows'
+});
+
+// filter functions
+var filterFns = {
+  // show if name ends with -ium
+  ium: function() {
+    var name = $(this).find('.name').text();
+    return name.match( /e$/ );
+  }
+};
+</script>
