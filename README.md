@@ -29,7 +29,7 @@ bis
 
 15.12.17 | Korrekturen und Bugs alle behoben
 
-         | Puffer
+           Puffer
          
 22.12.17 | MedienDB fertig
 
