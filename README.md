@@ -15,9 +15,10 @@
 - Verantwortlich dass Suchfunktion PHP-mässig funktioniert
 
 
-**Vlado -> PHP-Geek**
+**Vlado -> PHP- und JS-Geek**
 
 - Verantwortlich für alle anderen PHP-Teile (Eigen-entwickeltes Framework, Loads, etc.)
+- Verantwortlich für die UX (z.B. Filtering etc.)
 - Code-Verwaltung
 
 
