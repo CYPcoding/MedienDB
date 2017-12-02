@@ -26,34 +26,21 @@
 ### Aufbau
 
 ```
-+-- _assets (Beinhaltet Styling, Bilder und JavaScript)
-|   +-- css
-|   +-- img
-|   +-- js
-+-- _include (Die Teile der App, die auf jeder Seite verwendet werden)
-|   +-- header.php
-|   +-- footer.php
-+-- _page (Die Teile der App, die pro Seite spezifisch sind)
-|   +-- login.php (Login-Formular wenn Benutzer nicht angemeldet)
-|   +-- medienuebersicht.php (Standardansicht aller Medien)
-|   +-- upload.php (Auswahlseite für Bild- und Video-Upload)
-+-- .htaccess (Wichtig für Weiterleitungen (URL-Rewrite))
-+-- README.md (Beinhaltet diese Text-Datei)
-+-- index.php (Framework)
-```
-
-```
- .
-├── 2013 
-│   └── index.markdown
-├── 2014 
-│   └── index.markdown
-├── 2015 
-│   └── index.markdown
-├── _posts 
-│   └── 2014-12-27-2014-yili-degerlendirmesi.markdown
-├── _stash 
-└── update.sh 
+.
+├── assets (Beinhaltet Styling, Bilder und JavaScript)
+│   └── css
+│   └── img
+│   └── js
+└── include (Die Teile der App, die auf jeder Seite verwendet werden)
+│   └── header.php
+│   └── footer.php
+└── page (Die Teile der App, die pro Seite spezifisch sind)
+│   └── login.php (Login-Formular wenn Benutzer nicht angemeldet)
+│   └── medienuebersicht.php (Standardansicht aller Medien)
+│   └── upload.php (Auswahlseite für Bild- und Video-Upload)
+└── .htaccess (Wichtig für Weiterleitungen (URL-Rewrite))
+└── README.md (Beinhaltet diese Text-Datei)
+└── index.php (Framework)
 ```
 
 **Aufbau Framework**
