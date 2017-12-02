@@ -29,6 +29,7 @@
 	  crossorigin="anonymous"></script>
 	<script src="assets/js/uikit.min.js"></script>
 	<script src="assets/js/uikit-icons.min.js"></script>
-	<script src="assets/js/infinite-scroll.pkgd.min.js"></script>
+	<!-- TODO Infinite-Scroll implementieren
+	<script src="assets/js/infinite-scroll.pkgd.min.js"></script> -->
 </body>
 </html>

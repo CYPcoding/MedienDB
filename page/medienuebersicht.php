@@ -221,11 +221,3 @@
         </div>
     </div>
 </div>
-<script>
-$('.uk-child-width-1-5@m').infiniteScroll({
-  // options
-  path: '.pagination__next',
-  append: '.item',
-  history: false,
-});
-</script>
