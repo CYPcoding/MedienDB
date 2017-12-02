@@ -24,11 +24,17 @@
 ## Timeline
 
 bis
+
 08.12.17 | Grund-System fertig (alle Issues "enhancement" abgeschlossen)
+
 15.12.17 | Korrekturen und Bugs alle behoben
+
          | Puffer
+         
 22.12.17 | MedienDB fertig
+
 anschliessend | Formalitäten abschliessen für Projekt-Abschluss @FHNW
+
 
 ## Code
 
