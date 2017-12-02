@@ -12,6 +12,7 @@
 ?>
 	<title>Medienübersicht &ndash; CYP Mediendatenbank</title>
     <link rel="stylesheet" href="assets/css/uikit.min.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
 </head>
 <body>
 	<div class="uk-container uk-margin">
