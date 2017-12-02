@@ -1,3 +1,9 @@
 .uk-label {
 	background: #000;
 }
+
+ul > li.uk-active.uk-first-column > a {
+	background-color: #fff;
+	border: solid;
+	color: #000;
+}
