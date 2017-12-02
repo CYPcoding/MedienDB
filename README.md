@@ -4,17 +4,21 @@
 
 **Patrick -> HTML-Man**
 
-Verantwortlich dass HTML zu 100% "verhebed".
+- Verantwortlich dass HTML zu 100% "verhebed".
+- Verantwortlich dass Suche HTML-mässig funktionert
 
 
 **Marcel -> PHP-Teil**
 
-Verantwortlich für Login/DB und einzelnen PHP-Codesnippets (einfache If-Überprüfungen).
+- Verantwortlich für Login/DB 
+- Verantwortlich für einzelne PHP-Codesnippets (einfache If-Überprüfungen) *siehe Issue-List*
+- Verantwortlich dass Suchfunktion PHP-mässig funktioniert
 
 
 **Vlado -> PHP-Teil und Code-Verwalter**
 
-Verantwortlich für alle anderen PHP-Teile (Eigen-entwickeltes Framework, Loads, etc.).
+- Verantwortlich für alle anderen PHP-Teile (Eigen-entwickeltes Framework, Loads, etc.)
+- Code-Verwaltung
 
 
 ## Code
