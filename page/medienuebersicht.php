@@ -19,7 +19,7 @@
 </div>
 
 <div class="uk-child-width-1-5@m" uk-grid>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -39,7 +39,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -49,7 +49,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -59,7 +59,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -69,7 +69,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -79,7 +79,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -89,7 +89,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -99,7 +99,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -109,7 +109,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -119,7 +119,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -129,7 +129,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -139,7 +139,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -149,7 +149,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -159,7 +159,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -169,7 +169,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -179,7 +179,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -190,7 +190,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -200,7 +200,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -210,7 +210,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="item">
         <div class="uk-card uk-card-default">
             <div class="uk-card-media-top">
                 <img src="assets/img/kermit.jpg" alt="">
@@ -221,3 +221,11 @@
         </div>
     </div>
 </div>
+<script>
+$('.uk-child-width-1-5@m').infiniteScroll({
+  // options
+  path: '.pagination__next',
+  append: '.item',
+  history: false,
+});
+</script>
