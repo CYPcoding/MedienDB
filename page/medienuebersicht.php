@@ -1,7 +1,6 @@
 <div uk-grid>
 	<div class="uk-width-1-2@m">
 		<ul class="uk-subnav uk-subnav-pill"  uk-margin>
-	    	<li><a href="#">Alle</a></li>
 	    	<li class="uk-active"><a href="#">Bilder</a></li>
 	    	<li><a href="#">Videos</a></li>
 		</ul>
@@ -122,7 +121,7 @@
                 </div>
             </div>
         </div>
-        
+
         <a href="#media002" uk-toggle>
             <div class="item">
                 <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
@@ -597,21 +596,3 @@
         </div>
     </div>
 </div>
-
-
-<script>
-$('.mediagrid').isotope({
-  // options
-  itemSelector: '.item',
-  layoutMode: 'fitRows'
-});
-
-// filter functions
-var filterFns = {
-  // show if name ends with -ium
-  ium: function() {
-    var name = $(this).find('.name').text();
-    return name.match( /e$/ );
-  }
-};
-</script>
