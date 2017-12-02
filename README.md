@@ -24,7 +24,7 @@
 ## Code
 
 ### Aufbau
-.
+```
 +-- _assets (Beinhaltet Styling, Bilder und JavaScript)
 |   +-- css
 |   +-- img
@@ -39,6 +39,7 @@
 +-- .htaccess (Wichtig für Weiterleitungen (URL-Rewrite))
 +-- README.md (Beinhaltet diese Text-Datei)
 +-- index.php (Framework)
+```
 
 **Aufbau Framework**
 Die index.php ruft nur die einzelnen Komponenten auf (Header, Page-Inhalt und Footer). Header und Footer sind im Ordner `include` abgelegt. Die spezifischen Inhalte werden aus dem Folder `page` geladen.
