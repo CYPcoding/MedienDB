@@ -49,6 +49,7 @@
 ```
 
 **Aufbau Framework**
+
 Die index.php ruft nur die einzelnen Komponenten auf (Header, Page-Inhalt und Footer). Header und Footer sind im Ordner `include` abgelegt. Die spezifischen Inhalte werden aus dem Folder `page` geladen.
 
 
