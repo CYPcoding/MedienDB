@@ -123,7 +123,37 @@
         <div class="item">
             <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
                 <div class="uk-inline">
-                    <img src="assets/img/kermit.jpg" alt="">
+                    <img src="https://images.unsplash.com/photo-1500817487388-039e623edc21?auto=format&fit=crop&w=635&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
+                </div>
+                <div class="uk-overlay uk-position-bottom">
+                    <span class="uk-badge">BFE</span>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
+                <div class="uk-inline">
+                    <img src="https://images.unsplash.com/photo-1508182390781-8dd476c3237c?auto=format&fit=crop&w=1351&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
+                </div>
+                <div class="uk-overlay uk-position-bottom">
+                    <span class="uk-badge">BFE</span>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
+                <div class="uk-inline">
+                    <img src="https://images.unsplash.com/photo-1480241352829-e1573ff2414e?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
+                </div>
+                <div class="uk-overlay uk-position-bottom">
+                    <span class="uk-badge">BFE</span>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
+                <div class="uk-inline">
+                    <img src="https://images.unsplash.com/photo-1496060169243-453fde45943b?auto=format&fit=crop&w=672&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
                 </div>
                 <div class="uk-overlay uk-position-bottom">
                     <span class="uk-badge">BFE</span>
@@ -143,37 +173,7 @@
         <div class="item">
             <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
                 <div class="uk-inline">
-                    <img src="assets/img/kermit.jpg" alt="">
-                </div>
-                <div class="uk-overlay uk-position-bottom">
-                    <span class="uk-badge">BFE</span>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
-                <div class="uk-inline">
-                    <img src="assets/img/kermit.jpg" alt="">
-                </div>
-                <div class="uk-overlay uk-position-bottom">
-                    <span class="uk-badge">BFE</span>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
-                <div class="uk-inline">
-                    <img src="assets/img/kermit.jpg" alt="">
-                </div>
-                <div class="uk-overlay uk-position-bottom">
-                    <span class="uk-badge">BFE</span>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
-                <div class="uk-inline">
-                    <img src="assets/img/kermit.jpg" alt="">
+                    <img src="https://images.unsplash.com/photo-1485601284679-a2f86e6f7dea?auto=format&fit=crop&w=1350&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
                 </div>
                 <div class="uk-overlay uk-position-bottom">
                     <span class="uk-badge">BFE</span>
@@ -194,7 +194,7 @@
         <div class="item">
             <div class="uk-card uk-card-small uk-box-shadow-hover-xlarge">
                 <div class="uk-inline">
-                    <img src="assets/img/kermit.jpg" alt="">
+                    <img src="https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=2134&q=80&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D" alt="">
                 </div>
                 <div class="uk-overlay uk-position-bottom">
                     <span class="uk-badge">BFE</span>
