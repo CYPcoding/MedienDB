@@ -71,7 +71,7 @@ Die index.php ruft nur die einzelnen Komponenten auf (Header, Page-Inhalt und Fo
 
 *Tabelle users*
 
-![table_users](https://lh4.googleusercontent.com/112R_7NLAfPIOYTA2SR442D3kclOYnNKGRIQmFgWwNmRsDaq47D9jjz--t37l3gDQlxO2w2fOY27XQ3haOI_=w1814-h1170-rw)
+![table_users](https://github.com/CYPcoding/MedienDB/blob/dev/trash/table_users.JPG?raw=true)
 
 ### .htaccess
 Damit die Weiterleitungen funktionieren muss zwingend die .htaccess-Datei mitgeladen werden. Es kann sein, dass je nach XAMPP/MAMP-Konfiguration bzw. deren Apache-Einstellungen zuerst die Datei zugelassen werden kann.
