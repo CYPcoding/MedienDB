@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="assets/css/custom.css" />
 </head>
 <body>
-	<div class="uk-container uk-margin paedi">
+	<div class="uk-container uk-margin">
 <?php
 	require_once('include/header.php'); 
 	$page=@$_GET['page'];
