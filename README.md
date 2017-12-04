@@ -69,6 +69,9 @@ Die index.php ruft nur die einzelnen Komponenten auf (Header, Page-Inhalt und Fo
 
 **Aufbau Datenbank**
 
+*Datenbank-Design*
+![Datenbank-Design](https://github.com/CYPcoding/MedienDB/blob/dev/trash/DatabaseDesign.JPG?raw=true)
+
 *Tabelle users*
 
 ![table_users](https://github.com/CYPcoding/MedienDB/blob/dev/trash/table_users.JPG?raw=true)
