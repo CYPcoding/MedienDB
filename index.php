@@ -17,6 +17,7 @@
 <body>
 	<div class="uk-container uk-margin">
 <?php
+	require_once('db-connect.php');
 	require_once('include/header.php'); 
 	$page=@$_GET['page'];
 	$pages=array('home','upload','login');

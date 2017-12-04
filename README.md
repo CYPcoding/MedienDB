@@ -67,6 +67,11 @@ anschliessend | Formalitäten abschliessen für Projekt-Abschluss @FHNW
 
 Die index.php ruft nur die einzelnen Komponenten auf (Header, Page-Inhalt und Footer). Header und Footer sind im Ordner `include` abgelegt. Die spezifischen Inhalte werden aus dem Folder `page` geladen.
 
+**Aufbau Datenbank**
+
+*Tabelle users*
+
+![table_users](https://lh4.googleusercontent.com/112R_7NLAfPIOYTA2SR442D3kclOYnNKGRIQmFgWwNmRsDaq47D9jjz--t37l3gDQlxO2w2fOY27XQ3haOI_=w1814-h1170-rw)
 
 ### .htaccess
 Damit die Weiterleitungen funktionieren muss zwingend die .htaccess-Datei mitgeladen werden. Es kann sein, dass je nach XAMPP/MAMP-Konfiguration bzw. deren Apache-Einstellungen zuerst die Datei zugelassen werden kann.
