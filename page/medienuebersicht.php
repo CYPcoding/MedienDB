@@ -1,3 +1,19 @@
+<?php
+session_start();
+require_once 'db-connect.php';
+ 
+// if session is not set this will redirect to login page
+if( !isset($_SESSION['email']) ) {
+    header("Location: page/login.php");
+    exit;
+}
+ 
+// select loggedin users detail
+$query = "SELECT * FROM users WHERE email=".$_SESSION['email'];
+$result = mysqli_query($conn,$query);
+$userRow = mysqli_num_rows($result);
+
+?>
 <div uk-grid>
 	<div class="uk-width-1-2@m">
 		<ul class="uk-subnav uk-subnav-pill"  uk-margin>
