@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <head>
   <title>Medienübersicht &ndash; CYP Mediendatenbank</title>
-  <link rel="stylesheet" href="assets/css/uikit.min.css" />
-  <link rel="stylesheet" href="assets/css/custom.css" />
+  <link rel="stylesheet" href="../assets/css/uikit.min.css" />
+  <link rel="stylesheet" href="../assets/css/custom.css" />
 </head>
 <body>
   <div class="uk-container uk-margin">
@@ -50,7 +50,7 @@ if(isset($_POST['btn-login']) ) {
    
    		//$password = hash('sha256', $pass); // password hashing using SHA256
   
-  		$query = "SELECT id, email, password FROM users WHERE email='$email' AND password='password'";
+  		$query = "SELECT id, email, password FROM users WHERE email='$email' AND password='$password'";
   		
   		//MD5 Password
   		//$query = "SELECT id, email, password FROM users WHERE email='$email' AND password='".md5($pass)."'";
@@ -69,7 +69,7 @@ if(isset($_POST['btn-login']) ) {
 ?>
 
 <div class="uk-box-shadow-medium uk-padding uk-position-center uk-text-center">
-	<img class="uk-margin-bottom" style="vertical-align: middle;" width="140" height="120" src="assets/img/logo.png" alt="CYP Logo">
+	<img class="uk-margin-bottom" style="vertical-align: middle;" width="140" height="120" src="../assets/img/logo.png" alt="CYP Logo">
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
 	    <div class="uk-margin">
 	        <div class="uk-inline">
@@ -101,10 +101,10 @@ if(isset($_POST['btn-login']) ) {
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
-  <script src="assets/js/uikit.min.js"></script>
-  <script src="assets/js/uikit-icons.min.js"></script>
+  <script src="../assets/js/uikit.min.js"></script>
+  <script src="../assets/js/uikit-icons.min.js"></script>
   <!-- TODO Infinite-Scroll implementieren
-  <script src="assets/js/infinite-scroll.pkgd.min.js"></script> -->
+  <script src="../assets/js/infinite-scroll.pkgd.min.js"></script> -->
 </body>
 </html>
 
