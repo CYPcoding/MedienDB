@@ -57,11 +57,11 @@ if(isset($_POST['btn-login']) ) {
    		
    		$result = mysqli_query($conn,$query);
    		$rows = mysqli_num_rows($result); // if email/password correct it returns must be 1 row
-
+      
    		if($rows == 1) {
-    		$success_message = "Login successfully";
     		$_SESSION['email'] = $email;
-    		header("Location: ../home");
+    		//header("Location: ../home");
+    		$success_message = "Login successfully";
    		} else {
     		$error_message = "Incorrect Credentials! Try again...!";
    		} 
