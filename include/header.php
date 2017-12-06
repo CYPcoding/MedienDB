@@ -21,8 +21,8 @@
         -->
 
         <ul id="navbar2" class="uk-navbar-nav">
-            <li <?php echo (@$_GET['page']=='home' ? 'class="uk-active"' : null); ?>><a href="home" >Medien</a></li>
-            <li <?php echo (@$_GET['page']=='upload' ? 'class="uk-active"' : null); ?>><a href="upload">Upload</a></li>
+            <li <?php echo (@$_GET['page']=='home' ? 'class="uk-active"' : null); ?>><a href="../home" >Medien</a></li>
+            <li <?php echo (@$_GET['page']=='upload' ? 'class="uk-active"' : null); ?>><a href="../upload">Upload</a></li>
             <li><a href="#">Mein Konto</a></li>
         </ul>
 

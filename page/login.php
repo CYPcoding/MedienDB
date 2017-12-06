@@ -60,7 +60,7 @@ if(isset($_POST['btn-login']) ) {
    
    		if($rows == 1) {
     		$_SESSION['email'] = $email;
-    		header("Location: home");
+    		header("Location: ../home");
    		} else {
     		$error_message = "Incorrect Credentials! Try again...";
    		} 
