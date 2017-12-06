@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require_once '../db-connect.php';
+require_once('db-connect.php');
  
 //it will never let open index(login) page if session is set
 //if (isset($_SESSION['email'])!="" ) {
@@ -50,7 +50,7 @@ if(isset($_POST['btn-login']) ) {
    
    		if($rows == 1) {
     		$_SESSION['email'] = $email;
-    		header("Location: ../index.php");
+    		header("Location: ../home");
    		} else {
     		$error_message = "Incorrect Credentials! Try again...";
    		} 
