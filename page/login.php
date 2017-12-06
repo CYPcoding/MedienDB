@@ -75,15 +75,16 @@ if(isset($_POST['btn-login']) ) {
 	        <div class="uk-inline">
 	            <span class="uk-form-icon" uk-icon="icon: user"></span>
 	            <input name="email" class="uk-input" type="text" placeholder="E-Mail" value="<?php echo $email; ?>">
-	            <span class="text-danger"><?php echo $emailError; ?></span>
+	            <span class="uk-text-warning"><?php echo $emailError; ?></span>
 	        </div>
 	    </div>
 	    <div class="uk-margin">
-	        <div class="uk-inline">
+	       <div class="uk-inline">
 	            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
 	            <input name="password" class="uk-input" type="text" placeholder="Passwort">
-	            <span class="text-danger"><?php echo $passError; ?></span>
-	    </div>
+	            <span class="uk-text-warning"><?php echo $passError; ?></span>
+        </div>
+      </div>
 	    <div class="uk-margin" uk-margin>
 	        <button class="uk-button uk-button-primary" name="btn-login">Login</button>
 	    </div>
@@ -91,7 +92,7 @@ if(isset($_POST['btn-login']) ) {
             <a class="uk-link-muted" href="#">Passwort vergessen?</a>
     	</div>
 	</form>
-	<div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error_message; ?></div>
+	<div class="uk-text-warning"><?php echo $error_message; ?></div>
 </div> 
 <?php
   require_once('../include/footer.php'); 
