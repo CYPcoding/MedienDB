@@ -50,14 +50,15 @@ if(isset($_POST['btn-login']) ) {
    
    		//$password = hash('sha256', $pass); // password hashing using SHA256
   
-  		$query = "SELECT id, email, password FROM users WHERE email='$email' AND password='$password'";
+  		$query = "SELECT id, email, password FROM users WHERE email='$email' AND password=$pass";
   		
   		//MD5 Password
   		//$query = "SELECT id, email, password FROM users WHERE email='$email' AND password='".md5($pass)."'";
    		
    		$result = mysqli_query($conn,$query);
    		$rows = mysqli_num_rows($result); // if email/password correct it returns must be 1 row
-   
+      printf("Result set has %d rows.\n", $rows);
+      
    		if($rows == 1) {
     		$_SESSION['email'] = $email;
     		header("Location: ../home");
