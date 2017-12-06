@@ -5,7 +5,7 @@ require_once('db-connect.php');
  
 //it will never let open index(login) page if session is set
 //if (isset($_SESSION['email'])!="" ) {
-	//header("Location: home.php"); --> tbd
+	//header("Location: ../home"); --> tbd
 	//exit;
 //}
  
