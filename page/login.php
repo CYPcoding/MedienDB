@@ -1,7 +1,22 @@
+<!DOCTYPE html>
+<head>
 <?php
+  $page=@$_GET['page'];
+  $pages=array('home','medien');
+  //require_once(('meta/'.(in_array($page,$pages) ? $page : 'home')).'.php');
+?>
+  <title>Medienübersicht &ndash; CYP Mediendatenbank</title>
+    <link rel="stylesheet" href="../assets/css/uikit.min.css" />
+    <link rel="stylesheet" href="../assets/css/custom.css" />
+</head>
+<body>
+  <div class="uk-container uk-margin">
+<?php
+  require_once('../db-connect.php');
+  require_once('../include/header.php'); 
 
 session_start();
-require_once('db-connect.php');
+require_once('../db-connect.php');
  
 //it will never let open index(login) page if session is set
 //if (isset($_SESSION['email'])!="" ) {
@@ -59,7 +74,7 @@ if(isset($_POST['btn-login']) ) {
 ?>
 
 <div class="uk-box-shadow-medium uk-padding uk-position-center uk-text-center">
-	<img class="uk-margin-bottom" style="vertical-align: middle;" width="140" height="120" src="assets/img/logo.png" alt="CYP Logo">
+	<img class="uk-margin-bottom" style="vertical-align: middle;" width="140" height="120" src="../assets/img/logo.png" alt="CYP Logo">
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
 	    <div class="uk-margin">
 	        <div class="uk-inline">
@@ -83,3 +98,18 @@ if(isset($_POST['btn-login']) ) {
 	</form>
 	<div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error_message; ?></div>
 </div> 
+<?php
+  require_once('../include/footer.php'); 
+?>
+  </div>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script src="../assets/js/uikit.min.js"></script>
+  <script src="../assets/js/uikit-icons.min.js"></script>
+  <!-- TODO Infinite-Scroll implementieren
+  <script src="assets/js/infinite-scroll.pkgd.min.js"></script> -->
+</body>
+</html>
+
