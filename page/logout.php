@@ -11,8 +11,8 @@ if (isset($_GET['logout'])) {
   	unset($_SESSION['email']);
   	session_unset();
   	session_destroy();
-  	echo "Logout successfully"
-  	//header("Location: index.php");
+  	echo "Logout successfully";
+  	header("Location: page/login.php");
   	exit;
 }
 

@@ -7,6 +7,7 @@ RewriteRule ^home index.php [NC,L]
 RewriteRule ^home index.php?page=homez [NC,L]
 RewriteRule ^upload index.php?page=upload [NC,L]
 RewriteRule ^login page/login.php [NC,L]
+RewriteRule ^logout page/logout.php [NC,L]
 
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 
