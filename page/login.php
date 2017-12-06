@@ -50,19 +50,20 @@ if(isset($_POST['btn-login']) ) {
    
    		//$password = hash('sha256', $pass); // password hashing using SHA256
   
-  		$query = "SELECT id, email, password FROM users WHERE email='$email' AND password='$password'";
-  		
+  		$query = "SELECT * FROM users WHERE email='".$email."' AND password='".$pass."'";
+  		 		
   		//MD5 Password
   		//$query = "SELECT id, email, password FROM users WHERE email='$email' AND password='".md5($pass)."'";
    		
    		$result = mysqli_query($conn,$query);
    		$rows = mysqli_num_rows($result); // if email/password correct it returns must be 1 row
-   
+
    		if($rows == 1) {
+    		$success_message = "Login successfully";
     		$_SESSION['email'] = $email;
     		header("Location: ../home");
    		} else {
-    		$error_message = "Incorrect Credentials! Try again...";
+    		$error_message = "Incorrect Credentials! Try again...!";
    		} 
   	}
 }
@@ -92,7 +93,7 @@ if(isset($_POST['btn-login']) ) {
             <a class="uk-link-muted" href="#">Passwort vergessen?</a>
     	</div>
 	</form>
-	<div class="uk-text-warning"><?php echo $error_message; ?></div>
+	<div class="uk-text-warning"><?php echo $error_message; echo $success_message; ?></div>
 </div> 
 <?php
   require_once('../include/footer.php'); 
