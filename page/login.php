@@ -57,27 +57,30 @@ if(isset($_POST['btn-login']) ) {
   	}
 }
 ?>
-
 <div class="uk-box-shadow-medium uk-padding uk-position-center uk-text-center">
 	<img class="uk-margin-bottom" style="vertical-align: middle;" width="140" height="120" src="assets/img/logo.png" alt="CYP Logo">
 	<form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+    <div class="uk-text-left">
 	    <div class="uk-margin">
+          <label for="email" class="uk-text-left" style="margin-right: 16px;">E-Mail&nbsp;&nbsp;</label>
 	        <div class="uk-inline">
-	            <span class="uk-form-icon" uk-icon="icon: user"></span>
-	            <input name="email" class="uk-input" type="text" placeholder="E-Mail" value="<?php echo $email; ?>">
+              <span class="uk-form-icon" uk-icon="icon: user"></span>
+	            <input name="email" class="uk-input" type="text" value="<?php echo $email; ?>">
 	            <span class="text-danger"><?php echo $emailError; ?></span>
 	        </div>
 	    </div>
 	    <div class="uk-margin">
+          <label for="password" class="uk-text-left">Passwort&nbsp;&nbsp;</label>
 	        <div class="uk-inline">
-	            <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-	            <input name="password" class="uk-input" type="text" placeholder="Passwort">
+              <span class="uk-form-icon" uk-icon="icon: lock"></span>
+	            <input name="password" class="uk-input" type="text">
 	            <span class="text-danger"><?php echo $passError; ?></span>
 	    </div>
-	    <div class="uk-margin" uk-margin>
+    </div>
+	  <div class="uk-margin uk-text-center" uk-margin>
 	        <button class="uk-button uk-button-primary" name="btn-login">Login</button>
 	    </div>
-	    <div class="uk-text-center-small">
+	    <div class="uk-text-center-small uk-text-center">
             <a class="uk-link-muted" href="#">Passwort vergessen?</a>
     	</div>
 	</form>
