@@ -4,10 +4,9 @@
 	</div>
 	<div class="uk-width-1-2@m" align="right">
         <?php if(isset($_SESSION['email'])) {
-		echo '<p>Eingeloggt als <a href="#">' . $_SESSION['email'] . '</a>';
+		echo '<p>Eingeloggt als <a href="#">' . $_SESSION['email'] . '</a> | <a href="page/logout.php">Logout</a></p>';
         }
         ?>
-         | <a href="page/logout.php">Logout</a></p>
 	</div>
 </div>
 
