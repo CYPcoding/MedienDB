@@ -86,7 +86,7 @@ if(isset($_POST['btn-login']) ) {
           <label for="password" class="uk-text-left">Passwort&nbsp;&nbsp;</label>
           <div class="uk-inline">
               <span class="uk-form-icon" uk-icon="icon: lock"></span>
-              <input name="password" class="uk-input" type="text">
+              <input type="password" name="password" class="uk-input" type="text">
               <span class="text-danger"><?php echo $passError; ?></span>
       </div>
     </div>
