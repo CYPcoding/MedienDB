@@ -18,7 +18,7 @@ session_start();
 	require_once('db-connect.php');
 	require_once('include/header.php'); 
 	$page=@$_GET['page'];
-	$pages=array('home','upload','login');
+	$pages=array('home','upload','login','upload_img','upload_vid');
 	require_once(('page/'.(in_array($page,$pages) ? $page : 'medienuebersicht')).'.php');
 	require_once('include/footer.php');	
 ?>
