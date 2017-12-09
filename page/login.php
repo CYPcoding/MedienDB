@@ -93,7 +93,7 @@ if(isset($_POST['btn-login']) ) {
           <button class="uk-button uk-button-primary" name="btn-login">Login</button>
       </div>
       <div class="uk-text-center-small uk-text-center">
-            <a class="uk-link-muted" href="#">Passwort vergessen?</a>
+            <a class="uk-link-muted" href="../page/pwforgot.php">Passwort vergessen?</a>
       </div>
   </form>
 	<div class="uk-text-warning"><?php echo $error_message; echo $success_message; ?></div>
