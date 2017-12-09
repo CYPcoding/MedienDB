@@ -3,7 +3,7 @@
 		<h1>CYP Mediendatenbank</h1>
 	</div>
 	<div class="uk-width-1-2@m" align="right">
-		<p>Eingeloggt als <a href="#">Sabrina Thoma</a> | <a href="logout">Logout</a></p>
+		<p>Eingeloggt als <a href="#">Sabrina Thoma</a> | <a href="page/logout.php">Logout</a></p>
 	</div>
 </div>
 
