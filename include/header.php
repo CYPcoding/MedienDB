@@ -3,7 +3,7 @@
 		<h1>CYP Mediendatenbank</h1>
 	</div>
 	<div class="uk-width-1-2@m" align="right">
-		<p>Eingeloggt als <a href="#">Sabrina Thoma</a> | <a href="#">Logout</a></p>
+		<p>Eingeloggt als <a href="#">Sabrina Thoma</a> | <a href="logout">Logout</a></p>
 	</div>
 </div>
 
@@ -21,8 +21,8 @@
         -->
 
         <ul id="navbar2" class="uk-navbar-nav">
-            <li <?php echo (@$_GET['page']=='home' ? 'class="uk-active"' : null); ?>><a href="home" >Medien</a></li>
-            <li <?php echo (@$_GET['page']=='upload' ? 'class="uk-active"' : null); ?>><a href="upload">Upload</a></li>
+            <li <?php echo (@$_GET['page']=='home' ? 'class="uk-active"' : null); ?>><a href="../home" >Medien</a></li>
+            <li <?php echo (@$_GET['page']=='upload' ? 'class="uk-active"' : null); ?>><a href="../upload">Upload</a></li>
             <li><a href="#">Mein Konto</a></li>
         </ul>
 

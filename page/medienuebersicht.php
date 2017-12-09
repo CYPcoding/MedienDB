@@ -4,7 +4,7 @@ require_once 'db-connect.php';
  
 // if session is not set this will redirect to login page
 if( !isset($_SESSION['email']) ) {
-    header("Location: login");
+    header("Location: page/login.php");
     exit;
 }
  
@@ -95,7 +95,7 @@ $userRow = mysqli_num_rows($result);
                                     <input class="uk-input" type="text" placeholder="Sabrina Thoma" disabled>
                                 </td>
                                 <td>
-                                    <input class="uk-input" type="text" placeholder="02.12.17" disabled>
+                                    <input class="uk-input" type="text" placeholder="<?php echo date("d.m.Y"); ?>" disabled>
                                 </td>
                                 <td>
                                     <button class="uk-button uk-button-primary">Download</button>
