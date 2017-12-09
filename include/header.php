@@ -3,28 +3,30 @@
 		<h1>CYP Mediendatenbank</h1>
 	</div>
 	<div class="uk-width-1-2@m" align="right">
-		<p>Eingeloggt als <a href="#">Sabrina Thoma</a> | <a href="page/logout.php">Logout</a></p>
+        <?php if(isset($_SESSION['email'])) {
+		echo '<p>Eingeloggt als <a href="#">' . $_SESSION['email'] . '</a>';
+        }
+        ?>
+         | <a href="page/logout.php">Logout</a></p>
 	</div>
 </div>
 
 <nav class="uk-navbar-container uk-margin" uk-navbar>
     <div class="uk-navbar-top">
 
-        <!-- TODO für Marcel
-            Wenn Benutzer nicht eingeloggt ist, sollte die erste Navbar angzeigt werden.
-            Wenn Benutezr eingeloggt ist, sollte die zweite Navbar angezeigt werden. -->
-
-        <!-- Sobald PHP-Code steht kann dieser Teil aktiviert werden
-        <ul id="navbar1" class="uk-navbar-nav">
-            <li <?php //echo (@$_GET['page']=='login' ? 'class="uk-active"' : null); ?>><a href="login">Login</a></li>
-        </ul>
-        -->
-
-        <ul id="navbar2" class="uk-navbar-nav">
-            <li <?php echo (@$_GET['page']=='home' ? 'class="uk-active"' : null); ?>><a href="../home" >Medien</a></li>
-            <li <?php echo (@$_GET['page']=='upload' ? 'class="uk-active"' : null); ?>><a href="../upload">Upload</a></li>
-            <li><a href="#">Mein Konto</a></li>
-        </ul>
+        <?php if(!isset($_SESSION['email'])) {
+            echo '<ul id="navbar1" class="uk-navbar-nav">
+            <li><a href="login">Login</a></li>
+        </ul>';
+        } else if(isset($_SESSION['email'])) {
+            echo'
+                <ul id="navbar2" class="uk-navbar-nav">
+                    <li><a href="home" >Medien</a></li>
+                    <li><a href="upload">Upload</a></li>
+                    <li><a href="#">Mein Konto</a></li>
+                </ul>';
+        }
+        ?>
 
     </div>
     <div class="uk-navbar-right">
