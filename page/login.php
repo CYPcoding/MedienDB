@@ -62,6 +62,7 @@ if(isset($_POST['btn-login']) ) {
     		$_SESSION['email'] = $email;
     		//header("Location: ../home");
     		$success_message = "Login successfully";
+        header("Location: ../home");
    		} else {
     		$error_message = "Incorrect Credentials! Try again...!";
    		} 
