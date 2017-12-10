@@ -24,12 +24,12 @@ $userRow = mysqli_num_rows($result);
 
 	<div id="filters" class="uk-width-1-2@m" align="right">
         <?php
-        $sql = "SELECT * FROM tags;";
-        $result = mysqli_query($conn, $sql);
-        $resultCheck = mysqli_num_rows($result);
+        $sql_tags = "SELECT * FROM tags;";
+        $result_tags = mysqli_query($conn, $sql_tags);
+        $resultCheck = mysqli_num_rows($result_tags);
 
         if($resultCheck > 0){
-            while($row = mysqli_fetch_assoc($result)){
+            while($row = mysqli_fetch_assoc($result_tags)){
                 echo '<a class="uk-label">' . $row['name'] . '</a>';
             }
         }
@@ -68,84 +68,42 @@ html { overflow-y: scroll; }
 </style>
 
 <div class="grid">
-  <a href="#media001" uk-toggle>
-    <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-      <div class="uk-inline">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
-      </div>
-      <div class="uk-overlay uk-position-bottom">
-        ><span class="uk-label">BFE</span> <span class="uk-label">Banking</span>
-      </div>
-      
-    </div>
-  </a>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
-  </div>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
-  </div>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
-  </div>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
-  </div>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
-  </div>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" />
-  </div>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" />
-  </div>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
-  </div>  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
-  </div>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
-  </div>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
-  </div>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
-  </div>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
-  </div>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" />
-  </div>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" />
-  </div>
-  <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
-  </div>
-</div>
 
+<?php
+    $sql_img = "SELECT * FROM content_img;";
+    $result_img = mysqli_query($conn, $sql_img);
+    $resultCheck = mysqli_num_rows($result_img);
 
-<div id="media001" class="uk-modal-container" uk-modal>
+    if($resultCheck > 0){
+        while($row = mysqli_fetch_assoc($result_img)){
+            echo '<a href="#m'. $row['id'] . '" uk-toggle>';
+            echo '<div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
+            <div class="uk-inline"><img src="assets/img/' . $row['path'] . '" /></div>';
+            echo '<div class="uk-overlay uk-position-bottom">
+        <span class="uk-label">BFE</span> <span class="uk-label">Banking</span>
+      </div></div></a>';
+        }
+    }
+    $result_img_m = mysqli_query($conn, $sql_img);
+    if($resultCheck > 0){
+        while($row_m = mysqli_fetch_assoc($result_img_m)){
+            echo '<div id="m' . $row_m['id'] . '" class="uk-modal-container" uk-modal>
             <div class="uk-modal-dialog uk-modal-body">
                 <button class="uk-modal-close-outside" type="button" uk-close></button>
                 <div class="uk-modal-body" uk-grid>
                     <div class="uk-width-2-3@m">
-                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" alt="" />
+                         <img src="assets/img/' . $row_m['path'] . '" />
                     </div>
                     <div class="uk-width-1-3@m">
                         <ul class="uk-list uk-list-large uk-list-divider">
-                            <li>Grösse: 1920 x 720 px</li>
+                            <li>' . $row_m['size'] . '</li>
                             <li>Tags: <span class="uk-label">BFE</span></li>
                         </ul>
                         
                             <br><br><br><br><br>Lizenz:
                             <ul class="uk-list uk-list-large uk-list-divider">
-                                <li>Bigstockphoto 185421579 - online</li>
-                                <li>Bigstockphoto 142157681 - print</li>
+                                <li>' . $row_m['licence_online'] . '</li>
+                                <li>' . $row_m['licence_print'] . '</li>
                             </ul>
                         
                     </div>
@@ -177,7 +135,7 @@ html { overflow-y: scroll; }
                                     <input class="uk-input" type="text" placeholder="Sabrina Thoma" disabled>
                                 </td>
                                 <td>
-                                    <input class="uk-input" type="text" placeholder="<?php echo date("d.m.Y"); ?>" disabled>
+                                    <input class="uk-input" type="text" placeholder="' . date("d.m.Y") . '" disabled>
                                 </td>
                                 <td>
                                     <button class="uk-button uk-button-primary">Download</button>
@@ -218,7 +176,12 @@ html { overflow-y: scroll; }
                     </table>
                 </div>
             </div>
-</div>
+</div>';
+        }
+    }
+
+
+?>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://unpkg.com/packery@2/dist/packery.pkgd.js"></script>
