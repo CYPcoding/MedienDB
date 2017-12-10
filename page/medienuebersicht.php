@@ -23,13 +23,17 @@ $userRow = mysqli_num_rows($result);
 	</div>
 
 	<div id="filters" class="uk-width-1-2@m" align="right">
-		<a class="uk-label" data-filter="e">Logo</a>
-		<a class="uk-label">Corporate</a>
-		<a class="uk-label">BFE</a>
-		<a class="uk-label">Icon</a>
-		<a class="uk-label">PAB</a>
-		<a class="uk-label">BFK</a>
-		<a class="uk-label">BEM</a>
+        <?php
+        $sql = "SELECT * FROM tags;";
+        $result = mysqli_query($conn, $sql);
+        $resultCheck = mysqli_num_rows($result);
+
+        if($resultCheck > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo '<a class="uk-label">' . $row['name'] . '</a>';
+            }
+        }
+        ?>
 	</div>
 </div>
 
