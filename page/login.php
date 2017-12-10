@@ -70,7 +70,7 @@ if(isset($_POST['btn-login']) ) {
 }
 ?>
 
-<div class="uk-box-shadow-medium uk-padding uk-position-center uk-text-center">
+<div class="uk-box-shadow-medium uk-padding uk-position-center uk-text-center login">
 	<img class="uk-margin-bottom" style="vertical-align: middle;" width="140" height="120" src="../assets/img/logo.png" alt="CYP Logo">
   <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
     <div class="uk-text-left">

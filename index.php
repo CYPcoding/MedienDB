@@ -20,8 +20,12 @@ session_start();
 	$page=@$_GET['page'];
 	$pages=array('home','upload','login','uploadimg','uploadvid');
 	require_once(('page/'.(in_array($page,$pages) ? $page : 'medienuebersicht')).'.php');
-	require_once('include/footer.php');	
 ?>
+	<div id="footer">
+<?php
+	require_once('include/footer.php');
+?>
+	</div>
 	</div>
 	<script
 	  src="https://code.jquery.com/jquery-3.2.1.min.js"
