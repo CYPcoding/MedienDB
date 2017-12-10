@@ -1,14 +1,12 @@
 html {
-	height: 100%;
-	box-sizing: border-box;
+	min-height: 100%;
+	position: relative;
  }
  
  body {
-	position: relative;
-	margin: 0;
-	padding-bottom: 6rem;
-	min-height: 100%;
- }
+	margin: 0 0 60px 0;
+    padding: 0;
+}
  
  #footer {
  	position: absolute;
@@ -23,8 +21,12 @@ html {
 	margin-left: auto;
  }
 
-  .upload, .login {
-   top: 450px;
+  .upload, .login, .uploadimg {
+   top: 450px!important;
+ }
+
+   .uploadimg, .uploadvid {
+   top: 430px!important;
  }
 
 .uk-label {
@@ -35,4 +37,8 @@ ul > li.uk-active.uk-first-column > a {
 	background-color: #fff;
 	border: solid;
 	color: #000;
+}
+
+form input .checkbox {
+	margin-right: 5px;
 }
