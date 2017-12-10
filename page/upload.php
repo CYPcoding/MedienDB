@@ -1,11 +1,11 @@
 <div class="uk-child-width-1-2@m uk-position-center uk-margin" uk-grid>
-	<a href="page/upload_img.php">
+	<a href="imgupload">
 		<div class="uk-child-width-1-2@m uk-card uk-card-default uk-text-center uk-card-body uk-float-left">
 			<span class="uk-float-left" uk-icon="icon: image; ratio: 2"></span>
 			<p class="uk-float-right">Neues Bild erfassen</p>
 		</div>
 	</a>
-	<a href="page/upload_vid.php">
+	<a href="vidupload">
 		<div class="uk-child-width-1-2@m uk-card uk-card-default uk-text-center uk-card-body uk-float-right">
 			<span class="uk-float-left" uk-icon="icon: video-camera; ratio: 2"></span>
 			<p class="uk-float-right">Neues Video erfassen</p>
