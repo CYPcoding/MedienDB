@@ -188,7 +188,11 @@ echo '</li>
                 $resultCheck_licence = mysqli_num_rows($result_licence);
 
 echo '
-                <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                
+';
+
+                    if($resultCheck_licence > 0){
+                        echo '<table class="uk-table uk-table-hover uk-table-divider uk-table-small">
                     <thead>
                         <tr>
                             <th>Art</th>
@@ -197,10 +201,7 @@ echo '
                             <th>Datum</th>
                         </tr>
                     </thead>
-                    <tbody>
-';
-
-                    if($resultCheck_licence > 0){
+                    <tbody>';
                         while($row_l = mysqli_fetch_assoc($result_licence)){
                             echo '
                                 <tr>
