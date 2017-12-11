@@ -118,14 +118,15 @@ echo '
                 </div>
                 <div class="uk-width-1-3@m">
                     <ul class="uk-list uk-list-large uk-list-divider">
+                        <li>Bildnummer (ID): ' . $row_m['id'] . '</li>
                         <li>' . $row_m['size'] . '</li>
                         <li>Tags: ';
                          if($resultCheck_tags > 0){
-    while($row_m = mysqli_fetch_assoc($result_tags)){
-        echo '<span class="uk-label">' . $row_m['name'] . '</span>
-        ';
-    }
-}
+                            while($row_t = mysqli_fetch_assoc($result_tags)){
+                                echo '<span class="uk-label">' . $row_t['name'] . '</span>
+                                ';
+                            }
+                        }
 echo '</li>
                     </ul>
                     
@@ -172,7 +173,21 @@ echo '</li>
                         </tr>
                     </tbody>
                 </table>
-                <h4>Verwendung:</h4>
+
+                <h4>Verwendung:</h4>';
+                
+                $sql_licence = "SELECT img_usage.licence_type,
+                                       img_usage.purpose,
+                                       users.name,
+                                       img_usage.date
+                                FROM img_usage
+                                INNER JOIN users ON
+                                    img_usage.user_id = users.id
+                                WHERE img_usage.img_id='" . $row_m['id'] . "';";
+                $result_licence = mysqli_query($conn, $sql_licence);
+                $resultCheck_licence = mysqli_num_rows($result_licence);
+
+echo '
                 <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
                     <thead>
                         <tr>
@@ -183,26 +198,28 @@ echo '</li>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Print</td>
-                            <td>Inserat Cash</td>
-                            <td>Simone Jeker</td>
-                            <td>18.12.16</td>
-                        </tr>
-                        <tr>
-                            <td>Print</td>
-                            <td>Inserat 20Min</td>
-                            <td>Simone Jeker</td>
-                            <td>02.12.16</td>
-                        </tr>
-                        <tr>
-                            <td>Online</td>
-                            <td>Inserat 20Min</td>
-                            <td>Vlado Repic</td>
-                            <td>03.02.16</td>
-                        </tr>
-                    </tbody>
-                </table>
+';
+
+                    if($resultCheck_licence > 0){
+                        while($row_l = mysqli_fetch_assoc($result_licence)){
+                            echo '
+                                <tr>
+                                    <td>' . $row_l['licence_type'] . '</td>
+                                    <td>' . $row_l['purpose'] . '</td>
+                                    <td>' . $row_l['name'] . '</td>';
+                                    $licence_date = date_create($row_l['date']); echo '
+                                    <td>' . date_format($licence_date, 'd.m.Y') . '</td>
+                                </tr>
+                                ';
+                        } 
+                    } else {
+                            echo 'Keine Eintr&auml;ge';
+                        }
+
+echo '
+    </tbody>
+</table>
+
             </div>
         </div>
     </div>
