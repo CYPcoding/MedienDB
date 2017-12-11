@@ -5,7 +5,7 @@ session_start();
 <head>
 <?php
 	$page=@$_GET['page'];
-	$pages=array('home','medien');
+	$pages=array('home','upload','login','uploadimg','uploadvid');
 	//require_once(('meta/'.(in_array($page,$pages) ? $page : 'home')).'.php');
 ?>
 	<title>Medienübersicht &ndash; CYP Mediendatenbank</title>
@@ -33,7 +33,7 @@ session_start();
 	require_once('db-connect.php');
 	require_once('include/header.php'); 
 	$page=@$_GET['page'];
-	$pages=array('home','upload','login','uploadimg','uploadvid');
+	$pages=array('home', 'upload','login','uploadimg','uploadvid');
 	require_once(('page/'.(in_array($page,$pages) ? $page : 'medienuebersicht')).'.php');
 ?>
 	<div id="footer">

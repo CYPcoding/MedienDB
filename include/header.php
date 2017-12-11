@@ -28,10 +28,14 @@
         ?>
 
     </div>
-    <div class="uk-navbar-item uk-navbar-right">
+    <?php
+    if($page=='') {
+        echo '<div class="uk-navbar-item uk-navbar-right">
         <form class="uk-search uk-search-navbar uk-search-default">
             <a class="uk-search-icon" uk-search-icon href="#"></a>
             <input class="uk-search-input" type="search" placeholder="Suche...">
         </form>
-    </div>
+    </div>';
+    }
+?>
 </nav>
