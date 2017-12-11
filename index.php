@@ -24,7 +24,7 @@ session_start();
 	   z-index: 9999;
 	 }
 	</style>
-	<div id="hideAll" style="display: none;">&nbsp;</div>
+	<div id="hideAll" style="display: none;"><p>Applikation wird geladen...</p></div>
 	<script>
 		document.getElementById("hideAll").style.display = "block";
 	</script>
