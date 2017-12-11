@@ -75,14 +75,22 @@ html { overflow-y: scroll; }
 
     if($resultCheck > 0){
         while($row = mysqli_fetch_assoc($result_img)){
+            $sql_tags = "SELECT img_to_tag.img_id, tags.name FROM img_to_tag INNER JOIN tags ON img_to_tag.tag_id=tags.id WHERE img_to_tag.img_id='" . $row['id'] . "';";
+            $result_tags = mysqli_query($conn, $sql_tags);
+            $resultCheck_tags = mysqli_num_rows($result_tags);
             echo '
     <!---------------------------------------------------------
          START: Bild (ID) ' . $row['id'] . ' --->
     <a href="#m'. $row['id'] . '" uk-toggle>
         <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
             <div class="uk-inline"><img src="assets/img/' . $row['path'] . '" /></div>
-            <div class="uk-overlay uk-position-bottom">
-                <span class="uk-label">BFE</span> <span class="uk-label">Banking</span>
+            <div class="uk-overlay uk-position-bottom">';
+                if($resultCheck_tags > 0){
+    while($row = mysqli_fetch_assoc($result_tags)){
+        echo '<span class="uk-label">' . $row['name'] . '</span>';
+    }
+}
+echo '
             </div>
         </div>
     </a>
