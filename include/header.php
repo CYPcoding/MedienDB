@@ -28,14 +28,10 @@
         ?>
 
     </div>
-    <div class="uk-navbar-right">
-        <div>
-            <a class="uk-navbar-toggle" uk-search-icon href="#"></a>
-            <div class="uk-drop" uk-drop="mode: click; pos: left-center; offset: 0">
-                <form class="uk-search uk-search-navbar uk-width-1-1">
-                    <input class="uk-search-input" type="search" placeholder="Suche..." autofocus>
-                </form>
-            </div>
-        </div>
+    <div class="uk-navbar-item uk-navbar-right">
+        <form class="uk-search uk-search-navbar uk-search-default">
+            <a class="uk-search-icon" uk-search-icon href="#"></a>
+            <input class="uk-search-input" type="search" placeholder="Suche...">
+        </form>
     </div>
 </nav>
