@@ -94,6 +94,10 @@ html { overflow-y: scroll; }
     $result_img_m = mysqli_query($conn, $sql_img);
     if($resultCheck > 0){
         while($row_m = mysqli_fetch_assoc($result_img_m)){
+            $sql_tags = "SELECT img_to_tag.img_id, tags.name FROM img_to_tag INNER JOIN tags ON img_to_tag.tag_id=tags.id WHERE img_to_tag.img_id='" . $row_m['id'] . "';";
+            $result_tags = mysqli_query($conn, $sql_tags);
+            $resultCheck_tags = mysqli_num_rows($result_tags);
+
             echo '
 
     <!---------------------------------------------------------
@@ -109,7 +113,13 @@ html { overflow-y: scroll; }
                 <div class="uk-width-1-3@m">
                     <ul class="uk-list uk-list-large uk-list-divider">
                         <li>' . $row_m['size'] . '</li>
-                        <li>Tags: <span class="uk-label">BFE</span></li>
+                        <li>Tags: ';
+                         if($resultCheck_tags > 0){
+    while($row_m = mysqli_fetch_assoc($result_tags)){
+        echo '<span class="uk-label">' . $row_m['name'] . '</span>';
+    }
+}
+echo '</li>
                     </ul>
                     
                         <br><br><br><br><br>Lizenz:
