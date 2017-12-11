@@ -122,7 +122,8 @@ echo '
                         <li>Tags: ';
                          if($resultCheck_tags > 0){
     while($row_m = mysqli_fetch_assoc($result_tags)){
-        echo '<span class="uk-label">' . $row_m['name'] . '</span>';
+        echo '<span class="uk-label">' . $row_m['name'] . '</span>
+        ';
     }
 }
 echo '</li>
