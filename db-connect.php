@@ -17,7 +17,4 @@ if (!$conn) {
     echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
   	die("Connection failed: " . mysqli_connect_error());
 }
- 
-echo "Connected successfully";
- 
 ?>
