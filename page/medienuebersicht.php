@@ -18,6 +18,7 @@ if( !isset($_SESSION['email']) ) {
 	</div>
 
 	<div id="filters" class="uk-width-1-2@m" align="right">
+        <a class="uk-label">ALLE</a>
         <?php
         $sql_tags = "SELECT * FROM tags;";
         $result_tags = mysqli_query($conn, $sql_tags);
@@ -25,7 +26,8 @@ if( !isset($_SESSION['email']) ) {
 
         if($resultCheck > 0){
             while($row = mysqli_fetch_assoc($result_tags)){
-                echo '<a class="uk-label">' . $row['name'] . '</a>';
+                echo '<a class="uk-label">' . $row['name'] . '</a>
+                ';
             }
         }
         ?>
@@ -82,7 +84,8 @@ html { overflow-y: scroll; }
             <div class="uk-overlay uk-position-bottom">';
                 if($resultCheck_tags > 0){
     while($row = mysqli_fetch_assoc($result_tags)){
-        echo '<span class="uk-label">' . $row['name'] . '</span>';
+        echo '<span class="uk-label">' . $row['name'] . '</span>
+        ';
     }
 }
 echo '
