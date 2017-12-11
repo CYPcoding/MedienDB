@@ -13,6 +13,21 @@ session_start();
     <link rel="stylesheet" href="assets/css/custom.css" />
 </head>
 <body>
+	<style>
+	#hideAll {
+	   position: fixed;
+	   left: 0px; 
+	   right: 0px; 
+	   top: 0px; 
+	   bottom: 0px; 
+	   background-color: white;
+	   z-index: 9999;
+	 }
+	</style>
+	<div id="hideAll" style="display: none;">&nbsp;</div>
+	<script>
+		document.getElementById("hideAll").style.display = "block";
+	</script>
 	<div class="uk-container uk-margin">
 <?php
 	require_once('db-connect.php');
@@ -35,5 +50,9 @@ session_start();
 	<script src="assets/js/uikit-icons.min.js"></script>
 	<!-- TODO Infinite-Scroll implementieren
 	<script src="assets/js/infinite-scroll.pkgd.min.js"></script> -->
+	<script>
+		window.onload = function()
+		{ document.getElementById("hideAll").style.display = "none"; }
+	</script>
 </body>
 </html>
