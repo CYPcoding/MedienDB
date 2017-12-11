@@ -154,7 +154,7 @@ echo '</li>
                                 <input class="uk-input" type="text" placeholder="Zweck">
                             </td>
                             <td>
-                                <input class="uk-input" type="text" placeholder="Sabrina Thoma" disabled>
+                                <input class="uk-input" type="text" placeholder="' . $_SESSION['email'] . '" disabled>
                             </td>
                             <td>
                                 <input class="uk-input" type="text" placeholder="' . date("d.m.Y") . '" disabled>
