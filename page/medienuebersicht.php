@@ -1,13 +1,19 @@
 <?php
 session_start();
 require_once 'db-connect.php';
- 
+$searchstring = trim($_GET['s']);
+$searchstring = strip_tags($searchstring);
+//$searchstring = htmlspecialchars($searchstring);
+
 // if session is not set this will redirect to login page
 if( !isset($_SESSION['email']) ) {
     header("Location: page/login.php");
     exit;
 }
 
+if ($searchstring != ''){
+    echo '<p>Suchergebnisse f&uuml;r <strong>' . $searchstring . '</strong></p>'; 
+}
 ?>
 <div uk-grid>
 	<div class="uk-width-1-2@m">
@@ -26,7 +32,7 @@ if( !isset($_SESSION['email']) ) {
 
         if($resultCheck > 0){
             while($row = mysqli_fetch_assoc($result_tags)){
-                echo '<a class="uk-label">' . $row['name'] . '</a>
+                echo '<a class="uk-label" href="?s=' . $row['name'] . '">' . $row['name'] . '</a>
                 ';
             }
         }
@@ -66,13 +72,30 @@ html { overflow-y: scroll; }
 
 <div class="grid uk-large-margin">
 <?php
-    $sql_img = "SELECT * FROM content_img;";
+    if ($searchstring != '') {
+        $sql_search_query = "SELECT DISTINCT content_img.*
+                    FROM content_img
+                    INNER JOIN img_to_tag ON
+                           img_to_tag.img_id = content_img.id
+                    INNER JOIN tags ON
+                           tags.id = img_to_tag.tag_id
+                    WHERE tags.name LIKE '%" . $searchstring . "%'
+                    OR content_img.id ='" . $searchstring . "' 
+                    LIMIT 50;";
+        $sql_img = $sql_search_query;
+    } else {
+        $sql_img = "SELECT * FROM content_img LIMIT 50;";
+    }
     $result_img = mysqli_query($conn, $sql_img);
     $resultCheck = mysqli_num_rows($result_img);
 
     if($resultCheck > 0){
         while($row = mysqli_fetch_assoc($result_img)){
-            $sql_tags = "SELECT img_to_tag.img_id, tags.name FROM img_to_tag INNER JOIN tags ON img_to_tag.tag_id=tags.id WHERE img_to_tag.img_id='" . $row['id'] . "';";
+            if ($searchstring != '') {
+                $sql_tags = "SELECT img_to_tag.img_id, tags.name FROM img_to_tag INNER JOIN tags ON img_to_tag.tag_id=tags.id WHERE img_to_tag.img_id='" . $row['id'] . "';";
+            } else {
+                $sql_tags = "SELECT img_to_tag.img_id, tags.name FROM img_to_tag INNER JOIN tags ON img_to_tag.tag_id=tags.id WHERE img_to_tag.img_id='" . $row['id'] . "';";
+            }
             $result_tags = mysqli_query($conn, $sql_tags);
             $resultCheck_tags = mysqli_num_rows($result_tags);
             echo '
@@ -100,7 +123,11 @@ echo '
     $result_img_m = mysqli_query($conn, $sql_img);
     if($resultCheck > 0){
         while($row_m = mysqli_fetch_assoc($result_img_m)){
-            $sql_tags = "SELECT img_to_tag.img_id, tags.name FROM img_to_tag INNER JOIN tags ON img_to_tag.tag_id=tags.id WHERE img_to_tag.img_id='" . $row_m['id'] . "';";
+            if ($searchstring != '') {
+                $sql_tags = "SELECT img_to_tag.img_id, tags.name FROM img_to_tag INNER JOIN tags ON img_to_tag.tag_id=tags.id WHERE img_to_tag.img_id='" . $row_m['id'] . "';";
+            } else {
+                $sql_tags = "SELECT img_to_tag.img_id, tags.name FROM img_to_tag INNER JOIN tags ON img_to_tag.tag_id=tags.id WHERE img_to_tag.img_id='" . $row_m['id'] . "';";
+            }
             $result_tags = mysqli_query($conn, $sql_tags);
             $resultCheck_tags = mysqli_num_rows($result_tags);
 
@@ -162,7 +189,7 @@ echo '</li>
                                 <input class="uk-input" type="text" placeholder="Zweck">
                             </td>
                             <td>
-                                <input class="uk-input" type="text" placeholder="' . $_SESSION['email'] . '" disabled>
+                                <input class="uk-input" type="text" placeholder="' . $userName . '" disabled>
                             </td>
                             <td>
                                 <input class="uk-input" type="text" placeholder="' . date("d.m.Y") . '" disabled>
