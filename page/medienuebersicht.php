@@ -64,7 +64,7 @@ html { overflow-y: scroll; }
 }
 </style>
 
-<div class="grid uk-large-margin">
+<div class="grid uk-large-margin body">
 <?php
     $sql_img = "SELECT * FROM content_img;";
     $result_img = mysqli_query($conn, $sql_img);
