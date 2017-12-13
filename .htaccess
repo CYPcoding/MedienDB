@@ -10,6 +10,7 @@ RewriteRule ^imgupload index.php?page=uploadimg [NC,L]
 RewriteRule ^vidupload index.php?page=uploadvid [NC,L]
 RewriteRule ^login page/login.php [NC,L]
 RewriteRule ^logout page/logout.php [NC,L]
+RewriteRule ^userprofile index.php?page=userprofile [NC,L]
 
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 

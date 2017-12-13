@@ -22,7 +22,7 @@
                 <ul id="navbar2" class="uk-navbar-nav">
                     <li><a href="home" >Medien</a></li>
                     <li><a href="upload">Upload</a></li>
-                    <li><a href="#">Mein Konto</a></li>
+                    <li><a href="userprofile">Mein Konto</a></li>
                 </ul>';
         }
         ?>
