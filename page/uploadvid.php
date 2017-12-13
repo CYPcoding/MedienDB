@@ -2,8 +2,9 @@
 <form class="uk-form-horizontal">
     <fieldset class="uk-fieldset">
 
-        <legend class="uk-legend">Neues Video erfassen</legend>
+        <legend class="uk-legend"><span class="uk-float-left" uk-icon="icon: video-camera; ratio: 2"></span>&nbsp;Neues Video erfassen</legend>
 
+            <p>Alle mit * markierten Felder sind Pflicht</p>
             <div class="uk-margin">
         		<div uk-form-custom>
         			<label class="uk-text-left" style="margin-right: 107px;">Titel *</label>
@@ -27,8 +28,7 @@
                 <label><input class="uk-checkbox" type="checkbox">&nbsp;<span class="uk-label">Banking</span></label>
                 <label><input class="uk-checkbox" type="checkbox">&nbsp;<span class="uk-label">BFK</span></label>
             </div>
-    		<button class="uk-button uk-button-primary" style="width: 500px; margin-left: 152px">speichern</button>
-    		<p>Alle mit * markierten Felder sind Pflicht</p>
+    		<button class="uk-button uk-button-primary" style="width: 500px; margin-left: 152px">Video in Mediendatenbank speichern</button>
 
     </fieldset>
 </form>

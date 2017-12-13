@@ -2,8 +2,9 @@
 <form class="uk-form-horizontal">
     <fieldset class="uk-fieldset">
 
-        <legend class="uk-legend">Neues Bild erfassen</legend>
+        <legend class="uk-legend"><span class="uk-float-left" uk-icon="icon: image; ratio: 2"></span>&nbsp;Neues Bild erfassen</legend>
 
+            <p>Alle mit * markierten Felder sind Pflicht</p>
         	<div class="uk-margin" uk-margin>
         		<div uk-form-custom="target: true">
         			<label class="uk-text-left" style="margin-right: 30px;">Datei *</label>
@@ -34,8 +35,7 @@
             		<input class="uk-input" style="width: 260px" type="text" placeholder="182214579" required>
         		</div>
     		</div>
-    		<button class="uk-button uk-button-primary" style="width: 337px; margin-left: 84px">speichern</button>
-    		<p>Alle mit * markierten Felder sind Pflicht</p>
+    		<button class="uk-button uk-button-primary" style="width: 337px; margin-left: 84px">Bild in Mediendatenbank speichern</button>
 
     </fieldset>
 </form>
