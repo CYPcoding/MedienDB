@@ -70,7 +70,7 @@ html { overflow-y: scroll; }
 }
 </style>
 
-<div class="grid uk-large-margin">
+<div class="grid uk-large-margin body">
 <?php
     if ($searchstring != '') {
         $sql_search_query = "SELECT DISTINCT content_img.*
