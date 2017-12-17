@@ -18,7 +18,7 @@ td {height: 100px;}
                                 INNER JOIN content_img ON
                                 	img_usage.img_id = content_img.id
                                 WHERE users.email='" . $_SESSION['email'] . "'
-                                ORDER BY img_usage.date DESC;";
+                                ORDER BY img_usage.id DESC;";
                 $result_licence = mysqli_query($conn, $sql_licence);
                 $resultCheck_licence = mysqli_num_rows($result_licence);
 
@@ -43,7 +43,16 @@ echo '
                             echo '
                                 <tr>
                                 	<td>' . $row_l['img_id'] . '</td>
-                                	<td class="uk-cover-container"><img src="assets/img/' . $row_l['path'] . '" uk-cover /></td>
+                                	<td class="uk-cover-container">';
+                                    // prevent image download with browser developer tools
+                                    $image = 'assets/img/' . $row_l['path'];
+                                    $type = pathinfo($image, PATHINFO_EXTENSION);
+                                    $data = file_get_contents($image);
+                                    $dataUri = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                                    echo '<img src="' . $dataUri . '" uk-cover />';
+
+                                    echo
+                                    '</td>
                                     <td>' . $row_l['licence_type'] . '</td>
                                     <td>' . $row_l['purpose'] . '</td>
                                     <td>' . $row_l['name'] . '</td>';

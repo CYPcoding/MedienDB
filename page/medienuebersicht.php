@@ -1,9 +1,12 @@
 <?php
 session_start();
-require_once 'db-connect.php';
+
+// header('Set-Cookie: fileLoading=true');
+
 $searchstring = trim($_GET['s']);
 $searchstring = strip_tags($searchstring);
-//$searchstring = htmlspecialchars($searchstring);
+$searchstring = mysqli_real_escape_string($conn, $searchstring);
+ $searchstring = htmlspecialchars($searchstring);
 
 // if session is not set this will redirect to login page
 if( !isset($_SESSION['email']) ) {
@@ -11,20 +14,37 @@ if( !isset($_SESSION['email']) ) {
     exit;
 }
 
+if ($searchstring != '') {
+    $sql_search_query = "SELECT DISTINCT content_img.*
+                FROM content_img
+                INNER JOIN img_to_tag ON
+                       img_to_tag.img_id = content_img.id
+                INNER JOIN tags ON
+                       tags.id = img_to_tag.tag_id
+                WHERE tags.name LIKE '%" . $searchstring . "%'
+                OR content_img.id ='" . $searchstring . "' 
+                LIMIT 50;";
+    $sql_img = $sql_search_query;
+} else {
+    $sql_img = "SELECT * FROM content_img LIMIT 50;";
+}
+$result_img = mysqli_query($conn, $sql_img);
+$resultCheck = mysqli_num_rows($result_img);
+
 if ($searchstring != ''){
-    echo '<p>Suchergebnisse f&uuml;r <strong>' . $searchstring . '</strong></p>'; 
+    echo '<p>' . $resultCheck . ' Suchergebnisse f&uuml;r <strong>' . $searchstring . '</strong></p>'; 
 }
 ?>
 <div uk-grid>
-	<div class="uk-width-1-2@m">
-		<ul class="uk-subnav uk-subnav-pill"  uk-margin>
-	    	<li class="uk-active"><a href="#">Bilder</a></li>
-	    	<li><a href="#">Videos</a></li>
-		</ul>
-	</div>
+    <div class="uk-width-1-2@m">
+        <ul class="uk-subnav uk-subnav-pill"  uk-margin>
+            <li class="uk-active"><a href="#">Bilder</a></li>
+            <li><a href="#">Videos</a></li>
+        </ul>
+    </div>
 
-	<div id="filters" class="uk-width-1-2@m" align="right">
-        <a class="uk-label">ALLE</a>
+    <div id="filters" class="uk-width-1-2@m" align="right">
+        <a class="uk-label" href="home">ALLE</a>
         <?php
         $sql_tags = "SELECT * FROM tags;";
         $result_tags = mysqli_query($conn, $sql_tags);
@@ -37,7 +57,7 @@ if ($searchstring != ''){
             }
         }
         ?>
-	</div>
+    </div>
 </div>
 
 <style>
@@ -72,22 +92,6 @@ html { overflow-y: scroll; }
 
 <div class="grid uk-large-margin body">
 <?php
-    if ($searchstring != '') {
-        $sql_search_query = "SELECT DISTINCT content_img.*
-                    FROM content_img
-                    INNER JOIN img_to_tag ON
-                           img_to_tag.img_id = content_img.id
-                    INNER JOIN tags ON
-                           tags.id = img_to_tag.tag_id
-                    WHERE tags.name LIKE '%" . $searchstring . "%'
-                    OR content_img.id ='" . $searchstring . "' 
-                    LIMIT 50;";
-        $sql_img = $sql_search_query;
-    } else {
-        $sql_img = "SELECT * FROM content_img LIMIT 50;";
-    }
-    $result_img = mysqli_query($conn, $sql_img);
-    $resultCheck = mysqli_num_rows($result_img);
 
     if($resultCheck > 0){
         while($row = mysqli_fetch_assoc($result_img)){
@@ -103,7 +107,15 @@ html { overflow-y: scroll; }
          START: Bild (ID) ' . $row['id'] . ' --->
     <a href="#m'. $row['id'] . '" uk-toggle>
         <div class="grid-item uk-card uk-card-small uk-box-shadow-hover-xlarge">
-            <div class="uk-inline"><img src="assets/img/' . $row['path'] . '" /></div>
+            <div class="uk-inline">';
+            // prevent image download with browser developer tools
+            $image = 'assets/img/' . $row['path'];
+            $type = pathinfo($image, PATHINFO_EXTENSION);
+            $data = file_get_contents($image);
+            $dataUri = 'data:image/' . $type . ';base64,' . base64_encode($data);
+            echo '<img src="' . $dataUri . '" />';
+
+            echo '</div>
             <div class="uk-overlay uk-position-bottom">';
                 if($resultCheck_tags > 0){
     while($row = mysqli_fetch_assoc($result_tags)){
@@ -140,8 +152,14 @@ echo '
         <div class="uk-modal-dialog uk-modal-body">
             <button class="uk-modal-close-outside" type="button" uk-close></button>
             <div class="uk-modal-body" uk-grid>
-                <div class="uk-width-2-3@m">
-                     <img src="assets/img/' . $row_m['path'] . '" />
+                <div class="uk-width-2-3@m">';
+                    // prevent image download with browser developer tools
+                    $image = 'assets/img/' . $row_m['path'];
+                    $type = pathinfo($image, PATHINFO_EXTENSION);
+                    $data = file_get_contents($image);
+                    $dataUri = 'data:image/' . $type . ';base64,' . base64_encode($data);
+                    echo '<img src="' . $dataUri . '" />';
+                echo '
                 </div>
                 <div class="uk-width-1-3@m">
                     <ul class="uk-list uk-list-large uk-list-divider">
@@ -167,50 +185,55 @@ echo '</li>
             </div>
             <div class="uk-modal-footer">
                 <h4>Dieses Bild neu verwenden:</h4>
-                <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
-                    <thead>
-                        <tr>
-                            <th>Art</th>
-                            <th>Zweck</th>
-                            <th>Benutzer</th>
-                            <th>Datum</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <select class="uk-select">
-                                    <option>Online</option>
-                                    <option>Print</option>
-                                </select>
-                            </td>
-                            <td>
-                                <input class="uk-input" type="text" placeholder="Zweck">
-                            </td>
-                            <td>
-                                <input class="uk-input" type="text" placeholder="' . $userName . '" disabled>
-                            </td>
-                            <td>
-                                <input class="uk-input" type="text" placeholder="' . date("d.m.Y") . '" disabled>
-                            </td>
-                            <td>
-                                <button class="uk-button uk-button-primary">Download</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <form action="page/function/purpose_entry.php" method="POST">
+                    <table class="uk-table uk-table-hover uk-table-divider uk-table-small">
+                        <thead>
+                            <tr>
+                                <th>Art</th>
+                                <th>Zweck</th>
+                                <th>Benutzer</th>
+                                <th>Datum</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <select class="uk-select" name="licencetype">
+                                        <option value="online">Online</option>
+                                        <option value="print">Print</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" name="purpose" placeholder ="Zweck">
+                                    <input name="imgid" value="' . $row_m['id'] . '" type="hidden" >
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" name="username" placeholder="' . $userName . '" disabled>
+                                </td>
+                                <td>
+                                    <input class="uk-input" type="text" name="date" placeholder="' . date("d.m.Y") . '" disabled>
+                                </td>
+                                <td>
+                                    <button class="uk-button uk-button-primary" type="submit" name="licencedownload">Download</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
 
                 <h4>Verwendung:</h4>';
                 
-                $sql_licence = "SELECT img_usage.licence_type,
+                $sql_licence = "SELECT img_usage.id,
+                                       img_usage.licence_type,
                                        img_usage.purpose,
                                        users.name,
                                        img_usage.date
                                 FROM img_usage
                                 INNER JOIN users ON
                                     img_usage.user_id = users.id
-                                WHERE img_usage.img_id='" . $row_m['id'] . "';";
+                                WHERE img_usage.img_id='" . $row_m['id'] . "'
+                                ORDER BY img_usage.id DESC;";
                 $result_licence = mysqli_query($conn, $sql_licence);
                 $resultCheck_licence = mysqli_num_rows($result_licence);
 

@@ -1,8 +1,10 @@
 <?php
 session_start();
+require_once 'db-connect.php';
 ?>
 <!DOCTYPE html>
 <head>
+	<meta charset="utf-8">
 <?php
 	$page=@$_GET['page'];
 	$pages=array('home','upload','login','uploadimg','uploadvid');
@@ -31,6 +33,7 @@ session_start();
 	<div class="uk-container uk-margin">
 <?php
 	require_once('db-connect.php');
+	require_once('include/get_userdetails.php');
 	require_once('include/header.php'); 
 	$page=@$_GET['page'];
 	$pages=array('home', 'upload','login','uploadimg','uploadvid', 'userprofile');

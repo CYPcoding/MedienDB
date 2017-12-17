@@ -42,3 +42,8 @@ ul > li.uk-active.uk-first-column > a {
 form input .checkbox {
 	margin-right: 5px;
 }
+
+/* prevents downloading image with right click */
+img {
+    pointer-events: none!important;
+}

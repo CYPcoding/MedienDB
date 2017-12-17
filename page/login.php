@@ -11,7 +11,6 @@
   require_once('../include/header.php'); 
 
 session_start();
-require_once('../db-connect.php');
  
 //it will never let open index(login) page if session is set
 //if (isset($_SESSION['email'])!="" ) {

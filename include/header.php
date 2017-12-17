@@ -1,22 +1,9 @@
 <?php
 
-if(isset($_SESSION['email'])){
-    // gets Username
-    $email_SS = $_SESSION['email'];
-    $sql_username = "SELECT name FROM users WHERE email='$email_SS';";
-    $result_username = mysqli_query($conn, $sql_username);
-    $resultCheck_username = mysqli_num_rows($result_username);
-
-    if($resultCheck_username > 0){
-        while($row_u = mysqli_fetch_assoc($result_username)){
-            $userName = $row_u['name'];
-        }
-    }
-}
-
+// include 'get_userdetails.php';
 
 ?>
-
+<noscript>JavaScript ist auf diesem Browser DEAKTIVIERT. Damit die Mediendatenbank ordnungsgemaess funktioniert, muessen Sie JavaScript zwingend aktivieren.</noscript>
 <div uk-grid>
 	<div class="uk-width-1-2@m">
 		<h1>CYP Mediendatenbank</h1>
