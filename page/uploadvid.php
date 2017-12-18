@@ -26,7 +26,7 @@
         		</div>
     		</div>
     		<div class="uk-margin">
-    			<label class="uk-text-left" style="margin-right: 19px;">Einbettungscode *</label>
+    			<label class="uk-text-left" style="margin-right: 19px;">Einbettungscode *<br>(Popover Embed<br>mit <strong>Thumbnail</strong>)</label>
             	<textarea class="uk-textarea uk-form-width-large" style="max-width: 500px" rows="5" name="videocode" required></textarea>
                 <span class="text-danger"><?php echo $videocodeError; ?></span>
         	</div>
