@@ -1,6 +1,7 @@
 <?php
 
 // include 'get_userdetails.php';
+session_start();
 
 ?>
 <noscript>JavaScript ist auf diesem Browser DEAKTIVIERT. Damit die Mediendatenbank ordnungsgemaess funktioniert, muessen Sie JavaScript zwingend aktivieren.</noscript>
@@ -26,8 +27,8 @@
         } else if(isset($_SESSION['email'])) {
             echo'
                 <ul id="navbar2" class="uk-navbar-nav">
-                    <li><a href="home">Bilder</a></li>
-                    <li><a href="overviewvid">Videos</a></li>
+                    <li><a href="bilder">Bilder</a></li>
+                    <li><a href="videos">Videos</a></li>
                     <li><a href="upload">Upload</a></li>
                     <li><a href="userprofile">Mein Konto</a></li>
                 </ul>';
@@ -36,11 +37,11 @@
 
     </div>
     <?php
-    if($page=='') {
+    if($page=='bilder' || $page=='videos') {
         echo '<div class="uk-navbar-item uk-navbar-right"><button class="uk-button uk-button-small" uk-toggle="target: #filters; animation: uk-animation-slide-top">Tag-Cloud öffnen</button></div><div class="uk-navbar-item uk-navbar-right">
         <form class="uk-search uk-search-navbar uk-search-default" name="searchform" action="" method="get">
             <a class="uk-search-icon" uk-search-icon href="#"></a>
-            <input id="searchstring" name="s" class="uk-search-input" type="search" placeholder="Suche...">
+            <input id="s" name="s" class="uk-search-input" type="search" placeholder="Suchen oder Bild-ID eingeben">
         </form>
     </div>';
     }

@@ -2,6 +2,6 @@
 session_start();
 session_destroy();
 echo 'Logout successfull';
-header("Location: ../page/login.php");
+header("Location: ../login");
 
 ?>

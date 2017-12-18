@@ -3,14 +3,16 @@
 Options +FollowSymLinks
 RewriteEngine On
 
-RewriteRule ^home index.php [NC,L]
-RewriteRule ^home index.php?page=homez [NC,L]
+RewriteRule ^bilder index.php?page=bilder [QSA]
+RewriteRule ^videos index.php?page=videos& [QSA]
 RewriteRule ^upload index.php?page=upload [NC,L]
 RewriteRule ^imgupload index.php?page=uploadimg [NC,L]
 RewriteRule ^vidupload index.php?page=uploadvid [NC,L]
-RewriteRule ^login page/login.php [NC,L]
+RewriteRule ^login index.php?page=login [NC,L]
+RewriteRule ^$ index.php?page=login [L]
 RewriteRule ^logout page/logout.php [NC,L]
 RewriteRule ^userprofile index.php?page=userprofile [NC,L]
+RewriteRule ^pwforgot index.php?page=pwforgot [NC,L]
 
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 

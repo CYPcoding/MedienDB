@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 // header('Set-Cookie: fileLoading=true');
 
 $searchstring = trim($_GET['s']);
@@ -10,7 +9,7 @@ $searchstring = mysqli_real_escape_string($conn, $searchstring);
 
 // if session is not set this will redirect to login page
 if( !isset($_SESSION['email']) ) {
-    header("Location: page/login.php");
+    header("Location: login");
     exit;
 }
 
@@ -21,9 +20,9 @@ if ($searchstring != '') {
                        img_to_tag.img_id = content_img.id
                 INNER JOIN tags ON
                        tags.id = img_to_tag.tag_id
-                WHERE tags.name LIKE '%" . $searchstring . "%'
-                OR content_img.id ='" . $searchstring . "' 
-                LIMIT 50;";
+                WHERE tags.name LIKE '%$searchstring%'
+                OR content_img.id ='$searchstring' 
+                LIMIT 100;";
     $sql_img = $sql_search_query;
 } else {
     $sql_img = "SELECT * FROM content_img LIMIT 50;";
@@ -50,9 +49,11 @@ $resultCheck = mysqli_num_rows($result_img);
 </div>
 <?php
 if ($resultCheck == 1){
-    echo '<p class="uk-text-center uk-text-large">1 Suchergebnis f&uuml;r <strong>"' . $searchstring . '"</strong>:</p>'; 
+    echo '<p class="uk-text-center uk-text-large">1 Suchergebnis f&uuml;r <strong>"' . $searchstring . '"</strong>:</p>
+    <p class="uk-text-center"><a href="bilder">Filter löschen</a></p>'; 
 } else if ($searchstring != ''){
-    echo '<p class="uk-text-center uk-text-large">' . $resultCheck . ' Suchergebnisse f&uuml;r <strong>"' . $searchstring . '"</strong>:</p>'; 
+    echo '<p class="uk-text-center uk-text-large">' . $resultCheck . ' Suchergebnisse f&uuml;r <strong>"' . $searchstring . '"</strong>:</p>
+    <p class="uk-text-center"><a href="bilder">Filter löschen</a></p>'; 
 }
 ?>
 
@@ -297,3 +298,7 @@ $grid.imagesLoaded().progress( function() {
 });  
 
 </script>
+
+<?php
+
+?>
