@@ -8,7 +8,7 @@ require_once '../../include/get_userdetails.php';
 /* Extra check if purpose is filled out (ensures that simply opening this file is not downloading anything) */
 $purpose = $_POST['purpose'];
 if($purpose = '') {
-	header("Location: ../../home");
+	header("Location: ../../login");
     exit;
 }
 $licencetype = $_POST['licencetype'];
@@ -36,7 +36,7 @@ $filepath = "../../assets/img/" . $imgPath;
 /* saves filepath in cookie for sending to img_download.php */
 $_SESSION['filepath'] = $filepath;
 
-$e= "../../index.php?page=userprofiledc" ; 
+$e= "../../userprofiledc" ; 
 echo "<script>setTimeout(function(){window.location.href = '$e';} ,2)</script>" ; 
 echo "<iframe src='img_download.php'></iframe>" ; 
 

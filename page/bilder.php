@@ -1,6 +1,5 @@
 <?php
 session_start();
-// header('Set-Cookie: fileLoading=true');
 
 $searchstring = trim($_GET['s']);
 $searchstring = strip_tags($searchstring);
@@ -27,12 +26,13 @@ if ($searchstring != '') {
 } else {
     $sql_img = "SELECT * FROM content_img LIMIT 50;";
 }
+
 $result_img = mysqli_query($conn, $sql_img);
 $resultCheck = mysqli_num_rows($result_img);
 ?>
 <div class="uk-margin uk-flex uk-flex-center" uk-grid>
     <div id="filters" class="uk-width-1-2@m uk-card uk-card-default uk-card-body uk-card-primary uk-width-medium" aria-hidden="true" hidden="hidden" align="center">
-        <a class="uk-label" href="overviewimg">ALLE</a>
+        <a class="uk-label" href="bilder">ALLE</a>
         <?php
         $sql_tags = "SELECT * FROM tags;";
         $result_tags = mysqli_query($conn, $sql_tags);
@@ -92,11 +92,7 @@ html { overflow-y: scroll; }
 
     if($resultCheck > 0){
         while($row = mysqli_fetch_assoc($result_img)){
-            if ($searchstring != '') {
-                $sql_tags = "SELECT img_to_tag.img_id, tags.name FROM img_to_tag INNER JOIN tags ON img_to_tag.tag_id=tags.id WHERE img_to_tag.img_id='" . $row['id'] . "';";
-            } else {
-                $sql_tags = "SELECT img_to_tag.img_id, tags.name FROM img_to_tag INNER JOIN tags ON img_to_tag.tag_id=tags.id WHERE img_to_tag.img_id='" . $row['id'] . "';";
-            }
+            $sql_tags = "SELECT img_to_tag.img_id, tags.name FROM img_to_tag INNER JOIN tags ON img_to_tag.tag_id=tags.id WHERE img_to_tag.img_id='" . $row['id'] . "';";
             $result_tags = mysqli_query($conn, $sql_tags);
             $resultCheck_tags = mysqli_num_rows($result_tags);
             echo '

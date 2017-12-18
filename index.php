@@ -1,13 +1,14 @@
 <?php
 session_start();
 require_once 'db-connect.php';
+require_once('include/get_userdetails.php');
 ?>
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
 <?php
 	$page=@$_GET['page'];
-	$pages=array('bilder', 'upload','login','uploadimg','uploadvid', 'userprofile', 'userprofiledc', 'videos', 'pwforgot');
+	$pages=array('bilder','login','uploadimg','uploadvid', 'upload', 'userprofile', 'userprofiledc', 'videos', 'pwforgot');
 	require_once(('page/meta/'.(in_array($page,$pages) ? $page : '../login')).'.php');
 ?>
 	<title>Medienübersicht &ndash; CYP Mediendatenbank</title>
@@ -58,11 +59,7 @@ require_once 'db-connect.php';
 	</style>
 	<div class="uk-container uk-margin">
 <?php
-	require_once('db-connect.php');
-	require_once('include/get_userdetails.php');
 	require_once('include/header.php'); 
-	$page=@$_GET['page'];
-	$pages=array('bilder', 'upload','login','uploadimg','uploadvid', 'userprofile', 'userprofiledc', 'videos', 'pwforgot');
 	require_once(('page/'.(in_array($page,$pages) ? $page : 'index')).'.php');
 
 ?>

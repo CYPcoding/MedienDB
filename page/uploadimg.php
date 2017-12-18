@@ -1,3 +1,13 @@
+<?php
+
+ // if session is not set this will redirect to login page
+if( !isset($_SESSION['email']) ) {
+    header("Location: login");
+    exit;
+}
+
+?>
+
 <div class="uk-position-center uploadimg">
 <form class="uk-form-horizontal">
     <fieldset class="uk-fieldset">

@@ -3,16 +3,17 @@
 Options +FollowSymLinks
 RewriteEngine On
 
-RewriteRule ^bilder index.php?page=bilder [QSA]
-RewriteRule ^videos index.php?page=videos& [QSA]
-RewriteRule ^upload index.php?page=upload [NC,L]
-RewriteRule ^imgupload index.php?page=uploadimg [NC,L]
-RewriteRule ^vidupload index.php?page=uploadvid [NC,L]
-RewriteRule ^login index.php?page=login [NC,L]
+RewriteRule ^bilder$ index.php?page=bilder [QSA]
+RewriteRule ^videos$ index.php?page=videos& [QSA]
+RewriteRule ^upload$ index.php?page=upload [NC,L]
+RewriteRule ^uploadimg$ index.php?page=uploadimg [NC,L]
+RewriteRule ^uploadvid$ index.php?page=uploadvid [NC,L]
+RewriteRule ^login$ index.php?page=login [NC,L]
 RewriteRule ^$ index.php?page=login [L]
-RewriteRule ^logout page/logout.php [NC,L]
-RewriteRule ^userprofile index.php?page=userprofile [NC,L]
-RewriteRule ^pwforgot index.php?page=pwforgot [NC,L]
+RewriteRule ^logout$ page/logout.php [NC,L]
+RewriteRule ^userprofile$ index.php?page=userprofile [NC,L]
+RewriteRule ^userprofiledc$ index.php?page=userprofiledc [NC,L]
+RewriteRule ^pwforgot$ index.php?page=pwforgot [NC,L]
 
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 
