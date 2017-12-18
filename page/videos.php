@@ -22,10 +22,11 @@ if($searchstring != '') {
                          WHERE tags.name LIKE '%$searchstring%'
                          OR content_vid.title LIKE '%$searchstring%'
                          OR content_vid.id = '$searchstring'
-                         LIMIT 100;";
+                         ORDER BY content_vid.id DESC
+                         LIMIT 50;";
      $sql_video = $sql_search_query;
 } else {
-    $sql_video = "SELECT * FROM content_vid LIMIT 50;";
+    $sql_video = "SELECT * FROM content_vid ORDER BY content_vid.id DESC LIMIT 50;";
 }
 $result_video = mysqli_query($conn, $sql_video);
 $resultCheck = mysqli_num_rows($result_video);
