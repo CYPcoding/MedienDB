@@ -37,7 +37,7 @@
     </div>
     <?php
     if($page=='') {
-        echo '<div class="uk-navbar-item uk-navbar-right"><button class="uk-button uk-button-small" uk-toggle="target: #filters">Tag-Cloud öffnen</button></div><div class="uk-navbar-item uk-navbar-right">
+        echo '<div class="uk-navbar-item uk-navbar-right"><button class="uk-button uk-button-small" uk-toggle="target: #filters; animation: uk-animation-slide-top">Tag-Cloud öffnen</button></div><div class="uk-navbar-item uk-navbar-right">
         <form class="uk-search uk-search-navbar uk-search-default" name="searchform" action="" method="get">
             <a class="uk-search-icon" uk-search-icon href="#"></a>
             <input id="searchstring" name="s" class="uk-search-input" type="search" placeholder="Suche...">
