@@ -36,7 +36,7 @@ require_once 'db-connect.php';
 	require_once('include/get_userdetails.php');
 	require_once('include/header.php'); 
 	$page=@$_GET['page'];
-	$pages=array('home', 'upload','login','uploadimg','uploadvid', 'userprofile');
+	$pages=array('home', 'upload','login','uploadimg','uploadvid', 'userprofile', 'userprofiledc');
 	require_once(('page/'.(in_array($page,$pages) ? $page : 'medienuebersicht')).'.php');
 
 ?>

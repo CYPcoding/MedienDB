@@ -36,7 +36,7 @@ $filepath = "../../assets/img/" . $imgPath;
 /* saves filepath in cookie for sending to img_download.php */
 $_SESSION['filepath'] = $filepath;
 
-$e= "../../userprofile" ; 
+$e= "../../index.php?page=userprofiledc" ; 
 echo "<script>setTimeout(function(){window.location.href = '$e';} ,2)</script>" ; 
 echo "<iframe src='img_download.php'></iframe>" ; 
 
