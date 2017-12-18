@@ -38,11 +38,15 @@ require_once 'db-connect.php';
 	$page=@$_GET['page'];
 	$pages=array('home', 'upload','login','uploadimg','uploadvid', 'userprofile');
 	require_once(('page/'.(in_array($page,$pages) ? $page : 'medienuebersicht')).'.php');
+
 ?>
+
 	<div id="footer">
+
 <?php
 	require_once('include/footer.php');
 ?>
+
 	</div>
 	</div>
 	<script

@@ -30,27 +30,16 @@ if ($searchstring != '') {
 }
 $result_img = mysqli_query($conn, $sql_img);
 $resultCheck = mysqli_num_rows($result_img);
-
-if ($searchstring != ''){
-    echo '<p>' . $resultCheck . ' Suchergebnisse f&uuml;r <strong>' . $searchstring . '</strong></p>'; 
-}
 ?>
-<div uk-grid>
-    <div class="uk-width-1-2@m">
-        <ul class="uk-subnav uk-subnav-pill"  uk-margin>
-            <li class="uk-active"><a href="#">Bilder</a></li>
-            <li><a href="#">Videos</a></li>
-        </ul>
-    </div>
-
-    <div id="filters" class="uk-width-1-2@m" align="right">
-        <a class="uk-label" href="home">ALLE</a>
+<div class="uk-margin uk-flex uk-flex-center" uk-grid>
+    <div id="filters" class="uk-width-1-2@m uk-card uk-card-default uk-card-body uk-card-primary uk-width-medium" aria-hidden="true" hidden="hidden" align="center">
+        <a class="uk-label" href="overviewimg">ALLE</a>
         <?php
         $sql_tags = "SELECT * FROM tags;";
         $result_tags = mysqli_query($conn, $sql_tags);
-        $resultCheck = mysqli_num_rows($result_tags);
+        $resultCheckTag = mysqli_num_rows($result_tags);
 
-        if($resultCheck > 0){
+        if($resultCheckTag > 0){
             while($row = mysqli_fetch_assoc($result_tags)){
                 echo '<a class="uk-label" href="?s=' . $row['name'] . '">' . $row['name'] . '</a>
                 ';
@@ -59,6 +48,13 @@ if ($searchstring != ''){
         ?>
     </div>
 </div>
+<?php
+if ($resultCheck == 1){
+    echo '<p class="uk-text-center uk-text-large">1 Suchergebnis f&uuml;r <strong>"' . $searchstring . '"</strong>:</p>'; 
+} else if ($searchstring != ''){
+    echo '<p class="uk-text-center uk-text-large">' . $resultCheck . ' Suchergebnisse f&uuml;r <strong>"' . $searchstring . '"</strong>:</p>'; 
+}
+?>
 
 <style>
 * { box-sizing: border-box; }
