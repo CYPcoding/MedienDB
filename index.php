@@ -8,7 +8,7 @@ require_once('include/get_userdetails.php');
 	<meta charset="utf-8">
 <?php
 	$page=@$_GET['page'];
-	$pages=array('bilder','login','uploadimg','uploadvid', 'upload', 'userprofile', 'userprofiledc', 'videos', 'pwforgot');
+	$pages=array('bilder','login','uploadimg','uploadvid', 'upload', 'userprofile', 'userprofiledc', 'bildererror', 'videos', 'pwforgot');
 	require_once(('page/meta/'.(in_array($page,$pages) ? $page : '../login')).'.php');
 ?>
 	<title>Medienübersicht &ndash; CYP Mediendatenbank</title>
@@ -46,17 +46,6 @@ require_once('include/get_userdetails.php');
 	<div id="load_screen">
 		<div id="loading"><p>Applikation wird geladen</p></div>
 	</div>
-	<style>
-	#hideAll {
-	   position: fixed;
-	   left: 0px; 
-	   right: 0px; 
-	   top: 0px; 
-	   bottom: 0px; 
-	   background-color: white;
-	   z-index: 9999;
-	 }
-	</style>
 	<div class="uk-container uk-margin">
 <?php
 	require_once('include/header.php'); 

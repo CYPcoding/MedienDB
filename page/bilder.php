@@ -4,7 +4,7 @@ session_start();
 $searchstring = trim($_GET['s']);
 $searchstring = strip_tags($searchstring);
 $searchstring = mysqli_real_escape_string($conn, $searchstring);
- $searchstring = htmlspecialchars($searchstring);
+$searchstring = htmlspecialchars($searchstring);
 
 // if session is not set this will redirect to login page
 if( !isset($_SESSION['email']) ) {
@@ -165,7 +165,8 @@ echo '
                                 ';
                             }
                         }
-echo '</li>
+echo '
+    </li>
                     </ul>
                     
                         <br><br><br><br><br>Lizenz:
@@ -197,8 +198,11 @@ echo '</li>
                                         <option value="print">Print</option>
                                     </select>
                                 </td>
-                                <td>
-                                    <input class="uk-input" type="text" name="purpose" placeholder ="Zweck">
+                                <td>';
+                                ?>
+                                    <input class="uk-input" type="text" name="purpose" placeholder ="Zweck" value="<?php if(isset($_POST['purpose'])){ echo $_POST['purpose']; } ?>" required><br>
+                                    <span class="uk-text-danger"><?php echo $purposeError; ?></span>
+                                    <?php echo '
                                     <input name="imgid" value="' . $row_m['id'] . '" type="hidden" >
                                 </td>
                                 <td>

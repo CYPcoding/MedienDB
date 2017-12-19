@@ -13,6 +13,7 @@ RewriteRule ^$ index.php?page=login [L]
 RewriteRule ^logout$ page/logout.php [NC,L]
 RewriteRule ^userprofile$ index.php?page=userprofile [NC,L]
 RewriteRule ^userprofiledc$ index.php?page=userprofiledc [NC,L]
+RewriteRule ^bildererror$ index.php?page=bildererror [QSA]
 RewriteRule ^pwforgot$ index.php?page=pwforgot [NC,L]
 
 RewriteRule ^(.*)/$ /$1 [L,R=301]
