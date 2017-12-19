@@ -15,9 +15,9 @@ if( !isset($_SESSION['email']) ) {
 if($searchstring != '') {
     $sql_search_query = "SELECT DISTINCT content_vid.*
                          FROM content_vid
-                         INNER JOIN vid_to_tag ON
-                                vid_to_tag.vid_id = content_vid.id
-                         INNER JOIN tags ON
+                         LEFT JOIN vid_to_tag ON
+                                content_vid.id = vid_to_tag.vid_id
+                         LEFT JOIN tags ON
                                 tags.id = vid_to_tag.tag_id
                          WHERE tags.name LIKE '%$searchstring%'
                          OR content_vid.title LIKE '%$searchstring%'
