@@ -47,11 +47,11 @@
 
                 if($resultCheckTag > 0){
                     echo '
-                    <p>Tags in der Datenbank: ';
+                    <p>Beispiel: <span class="uk-label">';
                     while($row = mysqli_fetch_assoc($result_tags)){
-                        echo '<span class="uk-label">' . $row['name'] . '</span> ';
+                        echo $row['name'] . ', ';
                     }
-                    echo '</p>';
+                    echo '...</span></p>';
                 }
                 ?>
     		<button class="uk-button uk-button-primary" type="submit" name="newvideo" style="width: 500px; margin-left: 152px">Video in Mediendatenbank speichern</button>
