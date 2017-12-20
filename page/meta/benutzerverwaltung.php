@@ -17,6 +17,9 @@ if(isset($_POST['newuserEntry'])) {
 	$newuserPassword = $_POST['newuserPassword'];
 	$newuserRole = $_POST['newuserRole'];
 
+	// Hash Password
+	$hashedPassword = password_hash($newuserPassword, PASSWORD_DEFAULT);
+
 	if(empty($newuserName)){
 		$error = true;
 		$newusernameError = "Bitte geben Sie den Vor- und Nachnamen an.";
@@ -30,7 +33,7 @@ if(isset($_POST['newuserEntry'])) {
 		$newuserpasswordError = "Bitte geben Sie ein Passwort an.";
 	}
 	if(!$error) {
-		$sql_newuser_entry = "INSERT INTO users (name, email, password, role) VALUES ('$newuserName', '$newuserEmail', '$newuserPassword', '$newuserRole');";
+		$sql_newuser_entry = "INSERT INTO users (name, email, password, role) VALUES ('$newuserName', '$newuserEmail', '$hashedPassword', '$newuserRole');";
 		mysqli_query($conn, $sql_newuser_entry);
 
 	}

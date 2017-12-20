@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 $searchstring = trim($_GET['s']);
 $searchstring = strip_tags($searchstring);
