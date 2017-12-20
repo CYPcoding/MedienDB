@@ -52,7 +52,7 @@ if(isset($_POST['login']) ) {
           <div class="uk-inline">
               <span class="uk-form-icon" uk-icon="icon: user"></span>
               <input name="email" class="uk-input" type="text" value="<?php echo $email; ?>">
-              <span class="uk-text-danger"><?php echo $emailError; ?></span>
+              <span class="uk-text-danger"><?php if($_GET['login'] == 'empty'){ echo 'Bitte E-Mail UND Passwort eingeben';} ?></span>
           </div>
       </div>
       <div class="uk-margin">
@@ -60,14 +60,13 @@ if(isset($_POST['login']) ) {
           <div class="uk-inline">
               <span class="uk-form-icon" uk-icon="icon: lock"></span>
               <input type="password" name="password" class="uk-input" type="text">
-              <span class="uk-text-danger"><?php echo $passError; ?></span>
           </div>
       </div>
       <div class="uk-margin uk-text-center" uk-margin>
           <button class="uk-button uk-button-primary" name="login" type="submit">Login</button>
       </div>
       <div class="uk-text-center-small uk-text-center">
-            <p class="uk-text-danger"><?php echo $error_message; echo $success_message; ?></p>
+            <p class="uk-text-danger"><?php if($_GET['login'] == 'error'){ echo 'Login fehlgeschlagen';} ?></p>
             <a class="uk-link-muted" href="pwforgot">Passwort vergessen?</a>
       </div>
     </div>
