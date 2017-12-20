@@ -29,12 +29,13 @@ body > div.uk-container.uk-margin {
    top: 430px!important;
  }
 
-.uk-overlay {
-  padding: 10px;
-}
-
 .uk-label {
   background: #000;
+}
+.bilder .uk-overlay {
+  padding: 10px;
+}
+.bilder .uk-label {
   font-size: 10px;
   padding: 0 2px;
 }

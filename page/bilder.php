@@ -82,7 +82,7 @@ html { overflow-y: scroll; }
 }
 </style>
 
-<div class="grid uk-large-margin body">
+<div class="grid uk-large-margin body bilder">
 <?php
 
     if($resultCheck > 0){
