@@ -7,12 +7,6 @@ if( !isset($_SESSION['email']) || $userRole == 'User' ) {
 
 $_SESSION['page'] = 'uploadvid';
 
- // if session is not set this will redirect to login page
-if( !isset($_SESSION['email']) ) {
-    header("Location: login");
-    exit;
-}
-
 $error = false;
 
 if(isset($_POST['newvideo'])){

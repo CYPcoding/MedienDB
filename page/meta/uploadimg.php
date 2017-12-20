@@ -9,19 +9,25 @@ $_SESSION['page'] = 'uploadimg';
 
 $error = false;
 
+set_time_limit(0);
+ini_set('upload_max_filesize', '500M');
+ini_set('post_max_size', '500M');
+ini_set('max_input_time', 4000);
+ini_set('max_execution_time', 4000);
+
 if(isset($_POST['newimage'])){
 
-    $file = $_POST['file'];
+    $imageFile = $_POST['file'];
     $imagesize = $_POST['imagesize'];
     $imagetags = $_POST['imagetags'];
     $licenceonline = $_POST['licenceonline'];
     $licenceprint = $_POST['licenceprint'];
     $dateToday = date("Y-m-d");
 
-    if(empty($file)){
-        $error = true;
-        $fileError = "Bitte w&auml;hlen Sie eine Bild-Datei aus.";
-    }
+    // if(empty($imageFile)){
+    //     $error = true;
+    //     $fileError = "Bitte w&auml;hlen Sie eine Bild-Datei aus.";
+    // }
     if(empty($imagesize)){
         $error = true;
         $imagesizeError = "Bitte geben Sie die Bild-Grösse an.";
@@ -38,10 +44,12 @@ if(isset($_POST['newimage'])){
         $error = true;
         $licencepError = "Bitte geben Sie die Lizenznummer an.";
     }
+    echo '<pre>' . print_r($_FILES) . '</pre>';
 
     if(!$error) {
 
     	$file = $_FILES['file'];
+        echo '52<br>';
     	$fileName = $_FILES['file']['name'];
     	$fileTmpName = $_FILES['file']['tmp_name'];
     	$fileSize = $_FILES['file']['size'];
@@ -57,25 +65,22 @@ if(isset($_POST['newimage'])){
     		if($fileError === 0) {
     			if($fileSize < 5000000) {
     				$fileNameNew = uniqid('', true) . '.' . $fileActualExt;
-    				$fileDestination = '../../assets/img/' . $fileNameNew;
+    				$fileDestination = 'assets/img/' . $fileNameNew;
     				move_uploaded_file($fileTmpName, $fileDestination);
     				echo 'upload success';
     			} else {
-    				$error = true;
-    				$fileTooBigError = "Your file is too big!";
+    				$fileTooBigError = "Die Datei ist zu gross";
     			}
     		} else {
-    			$error = true;
-    			$uploadError = "There was an error uploading your file!";
+    			$uploadError = "Fehler beim Datei-Upload";
     		}
     	} else {
-    		$error = true;
-    		$fileTypeError = "You cannot upload files of this type!";
+    		$fileTypeError = "Der Datei-Typ wird nicht unterst&uuml;tzt";
     	}
 
     	// db entries
     	// insert image itself
-        $sql_image_entry = "INSERT INTO content_img (path, size, licence_online, licence_print, upload_date, uploaded_by) VALUES ('$file', '$imagesize', '$licenceonline', '$licenceprint', '$dateToday', '$userId');";
+        $sql_image_entry = "INSERT INTO content_img (path, size, licence_online, licence_print, upload_date, uploaded_by) VALUES ('$fileNameNew', '$imagesize', '$licenceonline', '$licenceprint', '$dateToday', '$userId');";
         mysqli_query($conn, $sql_image_entry);
         $newimageID = mysqli_insert_id($conn);
         // insert image tags
