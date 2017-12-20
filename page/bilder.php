@@ -15,10 +15,11 @@ if ($searchstring != '') {
                        tags.id = img_to_tag.tag_id
                 WHERE tags.name LIKE '%$searchstring%'
                 OR content_img.id ='$searchstring' 
+                ORDER BY content_img.id DESC
                 LIMIT 100;";
     $sql_img = $sql_search_query;
 } else {
-    $sql_img = "SELECT * FROM content_img LIMIT 50;";
+    $sql_img = "SELECT * FROM content_img ORDER BY content_img.id DESC LIMIT 50;";
 }
 
 $result_img = mysqli_query($conn, $sql_img);

@@ -44,12 +44,11 @@ if(isset($_POST['newimage'])){
         $error = true;
         $licencepError = "Bitte geben Sie die Lizenznummer an.";
     }
-    echo '<pre>' . print_r($_FILES) . '</pre>';
+    // for debugging : echo '<pre>' . print_r($_FILES) . '</pre>';
 
     if(!$error) {
 
     	$file = $_FILES['file'];
-        echo '52<br>';
     	$fileName = $_FILES['file']['name'];
     	$fileTmpName = $_FILES['file']['tmp_name'];
     	$fileSize = $_FILES['file']['size'];
