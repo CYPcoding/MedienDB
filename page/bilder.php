@@ -6,12 +6,6 @@ $searchstring = strip_tags($searchstring);
 $searchstring = mysqli_real_escape_string($conn, $searchstring);
 $searchstring = htmlspecialchars($searchstring);
 
-// if session is not set this will redirect to login page
-if( !isset($_SESSION['email']) ) {
-    header("Location: login");
-    exit;
-}
-
 if ($searchstring != '') {
     $sql_search_query = "SELECT DISTINCT content_img.*
                 FROM content_img

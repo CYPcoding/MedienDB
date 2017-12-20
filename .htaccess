@@ -5,6 +5,7 @@ RewriteEngine On
 
 RewriteRule ^bilder$ index.php?page=bilder [QSA]
 RewriteRule ^videos$ index.php?page=videos& [QSA]
+RewriteRule ^benutzerverwaltung$ index.php?page=benutzerverwaltung [QSA]
 RewriteRule ^upload$ index.php?page=upload [NC,L]
 RewriteRule ^uploadimg$ index.php?page=uploadimg [NC,L]
 RewriteRule ^uploadvid$ index.php?page=uploadvid [NC,L]

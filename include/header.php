@@ -1,6 +1,4 @@
 <?php
-
-// include 'get_userdetails.php';
 session_start();
 
 ?>
@@ -28,8 +26,10 @@ session_start();
             echo'
                 <ul id="navbar2" class="uk-navbar-nav">
                     <li><a href="bilder">Bilder</a></li>
-                    <li><a href="videos">Videos</a></li>
-                    <li><a href="upload">Upload</a></li>
+                    <li><a href="videos">Videos</a></li>'; 
+                    if($userRole == 'Admin') { echo '<li><a href="upload">Upload</a></li>'; }
+                    if($userRole == 'Admin') { echo '<li><a href="benutzerverwaltung">Benutzerverwaltung</a></li>'; }
+                    echo '
                     <li><a href="userprofile">Mein Konto</a></li>
                 </ul>';
         }
@@ -37,19 +37,23 @@ session_start();
 
     </div>
     <?php
-    if($page=='bilder' || $page=='bilderuc' || $page=='bildererror' || $page=='videos' || $page=='videosuc') {
-        echo '<div class="uk-navbar-item uk-navbar-right"><button class="uk-button uk-button-small" uk-toggle="target: #filters; animation: uk-animation-slide-top">Tag-Cloud öffnen</button></div><div class="uk-navbar-item uk-navbar-right">
-        <form class="uk-search uk-search-navbar uk-search-default" name="searchform" action="" method="get">
-            <a class="uk-search-icon" uk-search-icon href="#"></a>
-            <input id="s" name="s" class="uk-search-input" type="search" placeholder="Suchen ';
-            if($page=='bilder'){
-                echo 'oder Bild-ID';
-            } else if ($page=='videos'){
-                echo 'oder Video-ID';
-            }
-            echo ' eingeben">
-        </form>
-    </div>';
+    if($page=='bilder' || $page=='bilderuc' || $page=='bildererror' || $page=='videos' || $page=='videosuc' || $page=='benutzerverwaltung') {
+        if($page!='benutzerverwaltung') {
+            echo '<div class="uk-navbar-item uk-navbar-right"><button class="uk-button uk-button-small" uk-toggle="target: #filters; animation: uk-animation-slide-top">Tag-Cloud öffnen</button></div>';
+        }
+        echo '<div class="uk-navbar-item uk-navbar-right">
+            <form class="uk-search uk-search-navbar uk-search-default" name="searchform" action="" method="get">
+                <a class="uk-search-icon" uk-search-icon href="#"></a>
+                <input id="s" name="s" class="uk-search-input" type="search" placeholder="Suchen ';
+                if($page=='bilder'){
+                    echo 'oder Bild-ID eingeben';
+                } else if ($page=='videos'){
+                    echo 'oder Video-ID eingeben';
+                }
+                echo '">
+            </form>
+        </div>';
     }
 ?>
+
 </nav>

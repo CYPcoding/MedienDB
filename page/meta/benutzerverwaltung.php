@@ -5,6 +5,7 @@ if( !isset($_SESSION['email']) || $userRole == 'User' ) {
     exit;
 }
 
-$_SESSION['page'] = 'upload';
+$_SESSION['page'] = 'benutzerverwaltung';
+$_SESSION['s'] = $_GET['s'];
 
 ?>

@@ -1,6 +1,11 @@
 <?php
-$_SESSION['page'] = 'uploadvid';
 
+if( !isset($_SESSION['email']) || $userRole == 'User' ) {
+    header("Location: login");
+    exit;
+}
+
+$_SESSION['page'] = 'uploadvid';
 
  // if session is not set this will redirect to login page
 if( !isset($_SESSION['email']) ) {

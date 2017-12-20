@@ -8,7 +8,7 @@ require_once('include/get_userdetails.php');
 	<meta charset="utf-8">
 <?php
 	$page=@$_GET['page'];
-	$pages=array('login', 'bilder', 'bilderuc', 'bildererror', 'upload', 'uploadimg', 'uploadvid', 'userprofile', 'userprofiledc', 'videos', 'videosuc', 'pwforgot');
+	$pages=array('login', 'benutzerverwaltung', 'bilder', 'bilderuc', 'bildererror', 'upload', 'uploadimg', 'uploadvid', 'userprofile', 'userprofiledc', 'videos', 'videosuc', 'pwforgot');
 	require_once(('page/meta/'.(in_array($page,$pages) ? $page : '../login')).'.php');
 ?>
 	<title>Medienübersicht &ndash; CYP Mediendatenbank</title>
