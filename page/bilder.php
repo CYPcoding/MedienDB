@@ -145,7 +145,7 @@ echo '
         <div class="uk-modal-dialog uk-modal-body">
             <button class="uk-modal-close-outside" type="button" uk-close></button>
             <div class="uk-modal-body" uk-grid>
-                <div class="uk-width-2-3@m">';
+                <div class="uk-width-2-3@m uk-inline">';
                     // prevent image download with browser developer tools
                     $image = 'assets/img/' . $row_m['path'];
                     $type = pathinfo($image, PATHINFO_EXTENSION);
@@ -153,6 +153,13 @@ echo '
                     $dataUri = 'data:image/' . $type . ';base64,' . base64_encode($data);
                     echo '<img src="' . $dataUri . '" />';
                 echo '
+                    <div class="uk-overlay uk-light uk-position-center">
+                        <p>Copyright &copy; CYP Association</p>
+                        <p>&nbsp;</p>
+                        <p>Copyright &copy; CYP Association</p>
+                        <p>&nbsp;</p>
+                        <p>Copyright &copy; CYP Association</p>
+                    </div>
                 </div>
                 <div class="uk-width-1-3@m">
                     <ul class="uk-list uk-list-large uk-list-divider">

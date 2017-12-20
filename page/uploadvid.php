@@ -1,8 +1,6 @@
 <?php
 
-
 ?>
-
 
 <div class="uk-position-center uploadvid">
 <form class="uk-form-horizontal" action="uploadvid" method="POST">
@@ -41,7 +39,7 @@
             }
             </style>
                 <?php
-                $sql_tags = "SELECT * FROM tags;";
+                $sql_tags = "SELECT * FROM tags LIMIT 8;";
                 $result_tags = mysqli_query($conn, $sql_tags);
                 $resultCheckTag = mysqli_num_rows($result_tags);
 

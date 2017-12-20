@@ -44,7 +44,7 @@ if(isset($_POST['newvideo'])){
         // insert video tags
         // split user entry in separate tags
     	$videotagsArray = explode(',', $videotags);
-    	// for ever tag
+    	// for every tag
     	foreach($videotagsArray as $videotagElement){
     		// delete whitespace at start end end of tag-string
     		$videotagElement = trim($videotagElement);
@@ -73,7 +73,7 @@ if(isset($_POST['newvideo'])){
 		  	}
 		}
 
-        header('Location: videos');
+        header('Location: videosuc');
     }
 }
 

@@ -37,7 +37,7 @@ session_start();
 
     </div>
     <?php
-    if($page=='bilder' || $page=='videos') {
+    if($page=='bilder' || $page=='bilderuc' || $page=='bildererror' || $page=='videos' || $page=='videosuc') {
         echo '<div class="uk-navbar-item uk-navbar-right"><button class="uk-button uk-button-small" uk-toggle="target: #filters; animation: uk-animation-slide-top">Tag-Cloud öffnen</button></div><div class="uk-navbar-item uk-navbar-right">
         <form class="uk-search uk-search-navbar uk-search-default" name="searchform" action="" method="get">
             <a class="uk-search-icon" uk-search-icon href="#"></a>
