@@ -27,7 +27,7 @@ if(isset($_POST['resetpw'])){
 
     // send email with new password
     $to = $email;;
-    $subject = "Neues Passwort für MedienDB";
+    $subject = "Neues Passwort fuer MedienDB";
     $txt = "Ihr neues Passwort lautet " . $newPassword;
     $headers = "From: vlado.repic@cyp.ch";
     mail($to,$subject,$txt,$headers);
