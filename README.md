@@ -49,12 +49,24 @@ anschliessend | Formalitäten abschliessen für Projekt-Abschluss @FHNW
 │   
 └── include (Die Teile der App, die auf jeder Seite verwendet werden)
 │   └── header.php
+│   └── get_userdetails.php
 │   └── footer.php
 │   
+└── meta (Die Teile der App, die im Head der einzelnen Seiten spezifisch sind)
+│   └── (.. gleich wie bei /page ..)
+│   
 └── page (Die Teile der App, die pro Seite spezifisch sind)
+│   └── benutzerverwaltung.php (Benutzerliste und Funktion "neuen Benutzer anlegen")
+│   └── bilder.php (Ansicht und Suchmaske BilderDB)
 │   └── login.php (Login-Formular wenn Benutzer nicht angemeldet)
-│   └── medienuebersicht.php (Standardansicht aller Medien)
+│   └── logout.php (Abmeldung vom System)
+│   └── pwforgot.php (Formular, um sich ein neues Passwort zusenden zu lassen)
+│   └── rangliste.php (Top 10 Bilder Statistik)
 │   └── upload.php (Auswahlseite für Bild- und Video-Upload)
+│   └── uploadimg.php (Upload- und Tagging-Formular für Bilder)
+│   └── uploadvid.php (Upload- und Tagging-Formular für Videos)
+│   └── userprofile.php (Im "Mein Konto" werden die eigenen Verwendungen der Bilder angezeigt)
+│   └── videos.php (Ansicht und Suchmaske VideoDB)
 │   
 └── .htaccess (Wichtig für Weiterleitungen (URL-Rewrite))
 │   
